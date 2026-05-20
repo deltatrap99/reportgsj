@@ -709,6 +709,8 @@ tbody tr:hover {
   .sidebar {
     position: relative;
     top: 0;
+    display: grid;
+    gap: 14px;
   }
 
   .hero {
@@ -730,6 +732,14 @@ tbody tr:hover {
     width: 100%;
     justify-content: stretch;
   }
+
+  .brand {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 720px) {
@@ -750,7 +760,8 @@ tbody tr:hover {
   }
 
   .hero h2 {
-    font-size: 34px;
+    font-size: 30px;
+    line-height: 1.08;
   }
 
   .funnel-step {
@@ -768,5 +779,215 @@ tbody tr:hover {
   .month-filter,
   .language-toggle {
     width: 100%;
+  }
+
+  .sidebar {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .brand {
+    justify-items: center;
+  }
+
+  .brand-logo {
+    max-width: 170px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    scroll-snap-align: start;
+    padding: 11px 14px;
+  }
+
+  .sidebar-panel {
+    padding: 14px;
+  }
+
+  .goal-row {
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .topbar-meta {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+    text-align: center;
+  }
+
+  .topbar-divider {
+    display: none;
+  }
+
+  .topbar-period {
+    width: 100%;
+  }
+
+  .hero-copy,
+  .sales-copy {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hero-badge {
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+  }
+
+  .hero-badge strong {
+    font-size: 34px;
+  }
+
+  .panel,
+  .kpi-card {
+    padding: 18px;
+  }
+
+  .toolbar-panel {
+    padding: 16px;
+  }
+
+  .toolbar-cluster,
+  .sales-filter-grid {
+    gap: 10px;
+  }
+
+  .toolbar-group {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .filter-label {
+    font-size: 13px;
+  }
+
+  .month-filter {
+    min-width: 0;
+    padding: 11px 12px;
+  }
+
+  .kpi-value {
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .kpi-change {
+    font-size: 12px;
+  }
+
+  .channel-head,
+  .channel-metrics,
+  .sales-status-head {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .chart-shell {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .chart-legend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chart-legend span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 640px;
+  }
+
+  th,
+  td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .insight-list li,
+  .action-list li {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  body::before {
+    background-size: 28px 28px;
+  }
+
+  .shell {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .sidebar,
+  .panel,
+  .hero,
+  .kpi-card {
+    border-radius: 18px;
+  }
+
+  .hero {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .hero h2 {
+    font-size: 27px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .brand-logo {
+    max-width: 150px;
+  }
+
+  .topbar-meta,
+  .language-toggle {
+    min-height: 44px;
+  }
+
+  .hero-badge strong {
+    font-size: 30px;
+  }
+
+  .panel-head {
+    margin-bottom: 14px;
+  }
+
+  .sales-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-legend {
+    grid-template-columns: 1fr;
   }
 }
