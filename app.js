@@ -1,9 +1,3 @@
-const currency = new Intl.NumberFormat("vi-VN", {
-  style: "currency",
-  currency: "VND",
-  maximumFractionDigits: 0,
-});
-
 const number = new Intl.NumberFormat("vi-VN");
 
 const state = {
@@ -234,12 +228,21 @@ function formatValue(value, type) {
 
   switch (type) {
     case "currency":
-      return currency.format(value);
+      return formatCurrency(value);
     case "percent":
       return `${value.toFixed(1)}%`;
     default:
       return number.format(value);
   }
+}
+
+function formatCurrency(value) {
+  if (value === null || value === undefined || Number.isNaN(value)) {
+    return "-";
+  }
+
+  const amount = number.format(Math.round(value));
+  return state.language === "vi" ? `${amount} đ` : `${amount} VND`;
 }
 
 function formatChange(value, type = "percent") {
@@ -401,14 +404,14 @@ function buildInsights(summary) {
 
   const insights = [
     state.language === "vi"
-      ? `${summary.periodLabel} ghi nhận doanh thu ${currency.format(summary.revenue)} và ROAS ${summary.roas.toFixed(2)}.`
-      : `${summary.periodLabel} delivered ${currency.format(summary.revenue)} in revenue with ROAS ${summary.roas.toFixed(2)}.`,
+      ? `${summary.periodLabel} ghi nhận doanh thu ${formatCurrency(summary.revenue)} và ROAS ${summary.roas.toFixed(2)}.`
+      : `${summary.periodLabel} delivered ${formatCurrency(summary.revenue)} in revenue with ROAS ${summary.roas.toFixed(2)}.`,
     state.language === "vi"
-      ? `Tỷ lệ L0/C3 đạt ${l0Rate.toFixed(1)}% với ARPU ${currency.format(summary.arpu)}.`
-      : `L0/C3 conversion reached ${l0Rate.toFixed(1)}% with ARPU at ${currency.format(summary.arpu)}.`,
+      ? `Tỷ lệ L0/C3 đạt ${l0Rate.toFixed(1)}% với ARPU ${formatCurrency(summary.arpu)}.`
+      : `L0/C3 conversion reached ${l0Rate.toFixed(1)}% with ARPU at ${formatCurrency(summary.arpu)}.`,
     state.language === "vi"
-      ? `Giá C3 là ${currency.format(summary.c3Cost)} và giá L0 là ${currency.format(summary.l0Cost)}.`
-      : `Cost per C3 is ${currency.format(summary.c3Cost)} and cost per L0 is ${currency.format(summary.l0Cost)}.`,
+      ? `Giá C3 là ${formatCurrency(summary.c3Cost)} và giá L0 là ${formatCurrency(summary.l0Cost)}.`
+      : `Cost per C3 is ${formatCurrency(summary.c3Cost)} and cost per L0 is ${formatCurrency(summary.l0Cost)}.`,
   ];
 
   if (revenueDelta !== null) {
@@ -593,8 +596,8 @@ function renderMonthlyPerformance(months, selectedMonthKey) {
             <span class="metric-chip">ROAS ${roas.toFixed(2)}</span>
           </div>
           <div class="channel-metrics">
-            <span class="metric-chip">${t("revenue")} ${currency.format(month.revenue)}</span>
-            <span class="metric-chip">${t("kpiExpense")} ${currency.format(month.expense)}</span>
+            <span class="metric-chip">${t("revenue")} ${formatCurrency(month.revenue)}</span>
+            <span class="metric-chip">${t("kpiExpense")} ${formatCurrency(month.expense)}</span>
             <span class="metric-chip">C3 ${number.format(month.c3)}</span>
             <span class="metric-chip">L5 ${number.format(month.l5)}</span>
           </div>
@@ -731,8 +734,8 @@ function renderDailyTable(rows) {
       (row) => `
         <tr>
           <td>${row.date}</td>
-          <td>${currency.format(row.revenue)}</td>
-          <td>${currency.format(row.expense)}</td>
+          <td>${formatCurrency(row.revenue)}</td>
+          <td>${formatCurrency(row.expense)}</td>
           <td>${number.format(row.c3)}</td>
           <td>${number.format(row.l0)}</td>
           <td>${number.format(row.l5)}</td>
@@ -751,10 +754,10 @@ function hydrateMeta(report, summary) {
   document.getElementById("reporting-period").textContent = summary.periodLabel;
   document.getElementById("topbar-period").textContent = summary.periodLabel;
   document.getElementById("last-updated").textContent = `${t("syncedAt")}: ${report.source.syncedAt}`;
-  document.getElementById("sidebar-revenue").textContent = currency.format(summary.revenue);
+  document.getElementById("sidebar-revenue").textContent = formatCurrency(summary.revenue);
   document.getElementById("sidebar-roas").textContent = summary.roas.toFixed(2);
   document.getElementById("sidebar-efficiency").textContent = `${summary.efficiency.toFixed(1)}%`;
-  document.getElementById("sidebar-arpu").textContent = currency.format(summary.arpu);
+  document.getElementById("sidebar-arpu").textContent = formatCurrency(summary.arpu);
   document.getElementById("health-score").textContent = `${health.score}/100`;
   document.getElementById("health-label").textContent = t(health.labelKey);
   document.getElementById("hero-title").textContent = t("title");
