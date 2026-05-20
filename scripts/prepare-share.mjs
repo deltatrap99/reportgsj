@@ -11,11 +11,15 @@ const filesToCopy = [
   "index.html",
   "styles.css",
   "app.js",
+  "manifest.webmanifest",
+  "sw.js",
   "data/marketing-report.js",
   "data/marketing-report.json",
   "data/sales-report.js",
   "data/sales-report.json",
   "assets/logo-gsj-05.png",
+  "assets/icon-192.png",
+  "assets/icon-512.png",
 ];
 
 async function ensureParentDir(filePath) {
@@ -37,12 +41,18 @@ Day la ban chia se tinh cua dashboard Report GSJ.
 ## Cach mo
 
 1. Giai nen thu muc nay.
-2. Mo file \`index.html\` bang trinh duyet.
+2. Chay local server trong thu muc nay, vi PWA va bo nho offline khong hoat dong day du tren \`file://\`.
+3. Mo \`http://localhost:8080\` tren trinh duyet.
+
+Lenh chay:
+
+python3 -m http.server 8080
 
 ## Cach gui cho nguoi khac
 
 - Cach nhanh nhat: nen zip ca thu muc \`report-gsj-share\` roi gui.
 - Neu muon xem online: dua thu muc nay len Netlify, Vercel hoac GitHub Pages.
+- Neu muon cai dat nhu app: mo bang \`http://localhost\` hoac domain online, sau do chon "Add to Home Screen" / "Install app".
 
 ## Nguon du lieu
 
@@ -50,6 +60,8 @@ Du lieu da duoc dong bo san vao:
 
 - \`data/marketing-report.js\`
 - \`data/marketing-report.json\`
+- \`data/sales-report.js\`
+- \`data/sales-report.json\`
 `;
 
   await fs.writeFile(path.join(bundleRoot, "README-SHARE.md"), guide, "utf8");

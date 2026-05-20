@@ -56,7 +56,7 @@ const translations = {
     executiveInsights: "Insight điều hành",
     nextActions: "Next Actions",
     recommendedActions: "Đề xuất hành động",
-    title: "Báo cáo marketing chuyên nghiệp từ Google Sheet",
+    title: "Báo cáo Marketing giúp theo dõi trực quan, nâng cao hiệu suất",
     subtitle: "Dashboard đồng bộ từ khối Total, có thể xem theo tháng và theo tuần.",
     syncedAt: "Đồng bộ lúc",
     noPrevious: "Không có kỳ trước",
@@ -154,7 +154,7 @@ const translations = {
     executiveInsights: "Executive insights",
     nextActions: "Next Actions",
     recommendedActions: "Recommended actions",
-    title: "Professional marketing report from Google Sheet",
+    title: "Marketing reporting built for visual tracking and better performance",
     subtitle: "Dashboard synced from the Total block with monthly and weekly views.",
     syncedAt: "Synced at",
     noPrevious: "No previous period",
@@ -1273,6 +1273,14 @@ function init() {
   }
 
   updateDashboard();
+}
+
+if ("serviceWorker" in navigator && window.location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch((error) => {
+      console.error("Khong the dang ky service worker", error);
+    });
+  });
 }
 
 init();

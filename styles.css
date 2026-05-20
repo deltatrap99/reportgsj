@@ -295,8 +295,25 @@ body::before {
 .sales-filter-grid {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   margin-top: 18px;
+}
+
+.sales-filter-grid .toolbar-group {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 0;
+}
+
+.sales-filter-grid .filter-label {
+  display: block;
+  line-height: 1.25;
+}
+
+.sales-filter-grid .month-filter {
+  width: 100%;
+  min-width: 0;
 }
 
 .panel-nested {

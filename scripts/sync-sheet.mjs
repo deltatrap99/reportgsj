@@ -330,7 +330,7 @@ function buildReport(rows) {
       sourceType: "google-sheet-csv",
     },
     meta: {
-      title: "Bao cao marketing chuyen nghiep duoc dong bo tu Google Sheet",
+      title: "Bao cao Marketing giup theo doi truc quan, nang cao hieu suat",
       subtitle:
         "Dashboard nay doc khoi Total trong sheet va chuan hoa thanh KPI thang, funnel va nhat ky ngay.",
       activePeriod: current.label,
