@@ -102,8 +102,12 @@
                 <label class="filter-label" for="week-filter" data-i18n="selectWeek">Chọn tuần</label>
                 <select id="week-filter" class="month-filter"></select>
               </div>
+              <button id="refresh-data" class="refresh-button" type="button" data-i18n="refreshData">Cập nhật dữ liệu</button>
             </div>
           </div>
+          <p id="refresh-status" class="refresh-status" data-i18n="refreshHint">
+            Mở bằng localhost hoặc bản deploy để cập nhật trực tiếp dữ liệu mới nhất.
+          </p>
         </section>
 
         <section class="kpi-grid" id="kpi-grid"></section>

@@ -6,6 +6,8 @@ const state = {
   selectedMonthKey: null,
   selectedWeekKey: "all",
   language: "vi",
+  isRefreshing: false,
+  refreshStatusKey: "refreshHint",
   salesFilters: {
     year: "all",
     month: "all",
@@ -36,6 +38,12 @@ const translations = {
     filtersAndSync: "Bộ lọc và đồng bộ",
     selectMonth: "Chọn tháng",
     selectWeek: "Chọn tuần",
+    refreshData: "Cập nhật dữ liệu",
+    refreshLoading: "Đang cập nhật...",
+    refreshHint: "Mở bằng localhost hoặc bản deploy để cập nhật trực tiếp dữ liệu mới nhất.",
+    refreshSuccess: "Đã tải dữ liệu mới nhất vào dashboard.",
+    refreshFileMode: "Đang mở bằng file:// nên không thể tải lại dữ liệu trực tiếp. Hãy dùng localhost hoặc bản deploy.",
+    refreshError: "Không thể cập nhật dữ liệu lúc này. Kiểm tra lại nguồn dữ liệu hoặc server.",
     portfolioView: "Portfolio View",
     monthlyCompare: "So sánh doanh thu và chi phí theo tháng",
     dailyTrend: "Daily Trend",
@@ -134,6 +142,12 @@ const translations = {
     filtersAndSync: "Filters and sync",
     selectMonth: "Select month",
     selectWeek: "Select week",
+    refreshData: "Refresh data",
+    refreshLoading: "Refreshing...",
+    refreshHint: "Open with localhost or the deployed site to fetch the latest data directly.",
+    refreshSuccess: "The dashboard has loaded the latest data.",
+    refreshFileMode: "The dashboard is open with file://, so it cannot fetch updated data directly. Use localhost or the deployed site.",
+    refreshError: "The dashboard could not refresh data right now. Check the data source or server.",
     portfolioView: "Portfolio View",
     monthlyCompare: "Monthly revenue vs ad cost",
     dailyTrend: "Daily Trend",
@@ -484,6 +498,69 @@ function applyStaticTranslations() {
     node.textContent = t(key);
   });
   document.getElementById("language-toggle").textContent = state.language === "vi" ? "EN" : "VI";
+  renderRefreshUi();
+}
+
+function renderRefreshUi() {
+  const button = document.getElementById("refresh-data");
+  const status = document.getElementById("refresh-status");
+
+  if (button) {
+    button.textContent = state.isRefreshing ? t("refreshLoading") : t("refreshData");
+    button.disabled = state.isRefreshing;
+  }
+
+  if (status) {
+    status.textContent = t(state.refreshStatusKey);
+    status.dataset.state = state.refreshStatusKey === "refreshError" ? "error" : "default";
+  }
+}
+
+function setRefreshState(statusKey, isRefreshing = false) {
+  state.refreshStatusKey = statusKey;
+  state.isRefreshing = isRefreshing;
+  renderRefreshUi();
+}
+
+async function refreshDashboardData() {
+  if (state.isRefreshing) {
+    return;
+  }
+
+  if (!window.location.protocol.startsWith("http")) {
+    setRefreshState("refreshFileMode");
+    return;
+  }
+
+  setRefreshState("refreshLoading", true);
+
+  try {
+    const nonce = `ts=${Date.now()}`;
+    const [marketingResponse, salesResponse] = await Promise.all([
+      fetch(`data/marketing-report.json?${nonce}`, { cache: "no-store" }),
+      fetch(`data/sales-report.json?${nonce}`, { cache: "no-store" }),
+    ]);
+
+    if (!marketingResponse.ok || !salesResponse.ok) {
+      throw new Error("Fetch failed");
+    }
+
+    const [report, salesReport] = await Promise.all([marketingResponse.json(), salesResponse.json()]);
+
+    state.report = report;
+    state.salesReport = salesReport;
+
+    if (!report.availableMonths.some((month) => month.key === state.selectedMonthKey)) {
+      state.selectedMonthKey = report.meta.defaultMonthKey;
+      state.selectedWeekKey = "all";
+    }
+
+    updateDashboard();
+    setRefreshState("refreshSuccess");
+  } catch (error) {
+    console.error("Khong the cap nhat du lieu", error);
+    setRefreshState("refreshError");
+  }
 }
 
 function renderMonthOptions(report) {
@@ -1246,6 +1323,10 @@ function init() {
   document.getElementById("language-toggle").addEventListener("click", () => {
     state.language = state.language === "vi" ? "en" : "vi";
     updateDashboard();
+  });
+
+  document.getElementById("refresh-data").addEventListener("click", () => {
+    refreshDashboardData();
   });
 
   const salesFilterIds = [

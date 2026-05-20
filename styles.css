@@ -405,6 +405,34 @@ body::before {
   justify-content: flex-end;
 }
 
+.refresh-button {
+  border: 0;
+  border-radius: 16px;
+  min-height: 52px;
+  padding: 0 18px;
+  background: linear-gradient(135deg, #163029, #215041);
+  color: #f7f3eb;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(22, 48, 41, 0.14);
+}
+
+.refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.refresh-status {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.refresh-status[data-state="error"] {
+  color: var(--danger);
+}
+
 .filter-label {
   color: var(--muted);
   font-size: 14px;
@@ -733,6 +761,10 @@ tbody tr:hover {
     justify-content: stretch;
   }
 
+  .refresh-button {
+    width: 100%;
+  }
+
   .brand {
     margin-bottom: 0;
   }
@@ -777,7 +809,8 @@ tbody tr:hover {
   .topbar-meta,
   .toolbar-group,
   .month-filter,
-  .language-toggle {
+  .language-toggle,
+  .refresh-button {
     width: 100%;
   }
 
