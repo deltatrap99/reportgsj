@@ -23,6 +23,7 @@
           <a class="nav-link active" href="#overview" data-i18n="navOverview">Tổng quan</a>
           <a class="nav-link" href="#performance" data-i18n="navPerformance">Hiệu suất tháng</a>
           <a class="nav-link" href="#campaigns" data-i18n="navDaily">Nhật ký ngày</a>
+          <a class="nav-link" href="#sales" data-i18n="navSales">Khai thác Sale</a>
           <a class="nav-link" href="#insights">Insights</a>
         </nav>
 
@@ -189,10 +190,139 @@
             <ul id="action-list" class="action-list"></ul>
           </article>
         </section>
+
+        <section class="panel sales-panel" id="sales">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow" data-i18n="salesSectionLabel">Sales Deep Dive</p>
+              <h3 data-i18n="salesTitle">Báo cáo khai thác Sale</h3>
+              <p id="sales-subtitle" class="hero-copy sales-copy"></p>
+            </div>
+          </div>
+
+          <div class="sales-filter-grid">
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-year-filter" data-i18n="salesFilterYear">Năm</label>
+              <select id="sales-year-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-month-filter" data-i18n="salesFilterMonth">Tháng</label>
+              <select id="sales-month-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-week-filter" data-i18n="salesFilterWeek">Tuần</label>
+              <select id="sales-week-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-owner-filter" data-i18n="salesFilterOwner">Sale</label>
+              <select id="sales-owner-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-stage-filter" data-i18n="salesFilterStage">Funnel</label>
+              <select id="sales-stage-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-status-filter" data-i18n="salesFilterStatus">Tình trạng</label>
+              <select id="sales-status-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-product-filter" data-i18n="salesFilterProduct">Sản phẩm</label>
+              <select id="sales-product-filter" class="month-filter"></select>
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-source-filter" data-i18n="salesFilterSource">Nguồn data</label>
+              <select id="sales-source-filter" class="month-filter"></select>
+            </div>
+          </div>
+
+          <section class="sales-kpi-grid" id="sales-kpi-grid"></section>
+
+          <section class="grid-two sales-grid">
+            <article class="panel panel-nested">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="salesFunnelTitle">Sales Funnel</p>
+                  <h3 data-i18n="salesFunnelSubtitle">Funnel khai thác contact</h3>
+                </div>
+              </div>
+              <div id="sales-funnel" class="funnel"></div>
+            </article>
+
+            <article class="panel panel-nested">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="salesStatusTitle">Contact Status</p>
+                  <h3 data-i18n="salesStatusSubtitle">Phân bổ tình trạng contact</h3>
+                </div>
+              </div>
+              <div id="sales-status-list" class="sales-status-list"></div>
+            </article>
+          </section>
+
+          <section class="grid-two sales-grid">
+            <article class="panel panel-nested">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="salesLevelLabel">Level Breakdown</p>
+                  <h3 data-i18n="salesLevelTitle">Biểu đồ contact theo level</h3>
+                </div>
+              </div>
+              <div id="sales-level-chart" class="chart-shell"></div>
+            </article>
+
+            <article class="panel panel-nested">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="salesInsightLabel">Insights</p>
+                  <h3 data-i18n="salesInsightsTitle">Insight từ dữ liệu sale</h3>
+                </div>
+              </div>
+              <ul id="sales-insights-list" class="insight-list"></ul>
+            </article>
+          </section>
+
+          <section class="grid-two sales-grid">
+            <article class="panel panel-nested">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow" data-i18n="salesActionLabel">Actions</p>
+                  <h3 data-i18n="salesActionsTitle">Ưu tiên xử lý tiếp theo</h3>
+                </div>
+              </div>
+              <ul id="sales-actions-list" class="action-list"></ul>
+            </article>
+          </section>
+
+          <article class="panel panel-nested">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" data-i18n="salesTableLabel">Lead Details</p>
+                <h3 data-i18n="salesTableTitle">Bảng contact chi tiết</h3>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th data-i18n="day">Ngày</th>
+                    <th data-i18n="salesContact">Contact</th>
+                    <th data-i18n="salesOwnerCol">Sale</th>
+                    <th data-i18n="salesProductCol">Sản phẩm</th>
+                    <th data-i18n="salesStageCol">Funnel</th>
+                    <th data-i18n="salesStatusCol">Tình trạng</th>
+                    <th data-i18n="salesNoteCol">Ghi chú</th>
+                  </tr>
+                </thead>
+                <tbody id="sales-detail-table"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
       </main>
     </div>
 
     <script src="data/marketing-report.js"></script>
+    <script src="data/sales-report.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

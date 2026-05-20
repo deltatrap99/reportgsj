@@ -27,6 +27,7 @@ Nguồn dữ liệu hiện tại:
 │   ├── marketing-report.js
 │   └── marketing-report.json
 ├── scripts/
+│   ├── sync-sales-sheet.py
 │   ├── prepare-share.mjs
 │   └── sync-sheet.mjs
 ├── app.js
@@ -56,6 +57,12 @@ node scripts/sync-sheet.mjs
 ```
 
 Project cũng đã có automation sync hằng ngày lúc `07:00` theo giờ Việt Nam.
+
+Để đồng bộ dữ liệu khai thác sale từ workbook CRM / telesales:
+
+```bash
+python3 scripts/sync-sales-sheet.py
+```
 
 ## Chia sẻ cho người khác
 

@@ -13,6 +13,8 @@ const filesToCopy = [
   "app.js",
   "data/marketing-report.js",
   "data/marketing-report.json",
+  "data/sales-report.js",
+  "data/sales-report.json",
   "assets/logo-gsj-05.png",
 ];
 

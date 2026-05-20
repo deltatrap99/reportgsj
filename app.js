@@ -8,9 +8,20 @@ const number = new Intl.NumberFormat("vi-VN");
 
 const state = {
   report: null,
+  salesReport: null,
   selectedMonthKey: null,
   selectedWeekKey: "all",
   language: "vi",
+  salesFilters: {
+    year: "all",
+    month: "all",
+    week: "all",
+    owner: "all",
+    stage: "all",
+    status: "all",
+    product: "all",
+    source: "all",
+  },
 };
 
 const translations = {
@@ -18,6 +29,7 @@ const translations = {
     navOverview: "Tổng quan",
     navPerformance: "Hiệu suất tháng",
     navDaily: "Nhật ký ngày",
+    navSales: "Khai thác Sale",
     reportingPeriod: "Kỳ báo cáo",
     openSheet: "Mở Google Sheet",
     currentSnapshot: "Ảnh chụp kỳ đang xem",
@@ -66,11 +78,56 @@ const translations = {
     kpiC3: "C3",
     kpiL0: "L0",
     kpiL5: "L5 lũy kế",
+    salesSectionLabel: "Sales Deep Dive",
+    salesTitle: "Báo cáo khai thác Sale",
+    salesFilterYear: "Năm",
+    salesFilterMonth: "Tháng",
+    salesFilterWeek: "Tuần",
+    salesFilterOwner: "Sale",
+    salesFilterStage: "Funnel",
+    salesFilterStatus: "Tình trạng",
+    salesFilterProduct: "Sản phẩm",
+    salesFilterSource: "Nguồn data",
+    salesFunnelTitle: "Sales Funnel",
+    salesFunnelSubtitle: "Funnel khai thác contact",
+    salesStatusTitle: "Contact Status",
+    salesStatusSubtitle: "Phân bổ tình trạng contact",
+    salesInsightLabel: "Insights",
+    salesInsightsTitle: "Insight từ dữ liệu sale",
+    salesActionLabel: "Actions",
+    salesActionsTitle: "Ưu tiên xử lý tiếp theo",
+    salesTableLabel: "Lead Details",
+    salesTableTitle: "Bảng contact chi tiết",
+    salesContact: "Contact",
+    salesOwnerCol: "Sale",
+    salesProductCol: "Sản phẩm",
+    salesStageCol: "Funnel",
+    salesStatusCol: "Tình trạng",
+    salesNoteCol: "Ghi chú",
+    salesTotalContacts: "Tổng contact",
+    salesQualified: "Qualified",
+    salesScheduled: "Đã hẹn lịch",
+    salesNurtured: "Đang chờ chốt",
+    salesConfirmed: "Đã xác nhận",
+    salesPaid: "Đã thanh toán",
+    salesUnreachable: "Chưa kết nối",
+    salesAllYears: "Tất cả năm",
+    salesAllOwners: "Tất cả sale",
+    salesAllStages: "Tất cả funnel",
+    salesAllStatuses: "Tất cả tình trạng",
+    salesAllProducts: "Tất cả sản phẩm",
+    salesAllSources: "Tất cả nguồn data",
+    salesNoData: "Không có contact phù hợp với bộ lọc hiện tại.",
+    salesLevelLabel: "Level Breakdown",
+    salesLevelTitle: "Biểu đồ contact theo level",
+    salesAllMonths: "Tất cả tháng",
+    salesAllWeeks: "Tất cả tuần",
   },
   en: {
     navOverview: "Overview",
     navPerformance: "Monthly performance",
     navDaily: "Daily log",
+    navSales: "Sales pipeline",
     reportingPeriod: "Reporting period",
     openSheet: "Open Google Sheet",
     currentSnapshot: "Current snapshot",
@@ -119,6 +176,50 @@ const translations = {
     kpiC3: "C3",
     kpiL0: "L0",
     kpiL5: "L5 cumulative",
+    salesSectionLabel: "Sales Deep Dive",
+    salesTitle: "Sales pipeline report",
+    salesFilterYear: "Year",
+    salesFilterMonth: "Month",
+    salesFilterWeek: "Week",
+    salesFilterOwner: "Owner",
+    salesFilterStage: "Funnel",
+    salesFilterStatus: "Status",
+    salesFilterProduct: "Product",
+    salesFilterSource: "Lead source",
+    salesFunnelTitle: "Sales Funnel",
+    salesFunnelSubtitle: "Contact funnel overview",
+    salesStatusTitle: "Contact Status",
+    salesStatusSubtitle: "Contact status distribution",
+    salesInsightLabel: "Insights",
+    salesInsightsTitle: "Insights from sales data",
+    salesActionLabel: "Actions",
+    salesActionsTitle: "Recommended next actions",
+    salesTableLabel: "Lead Details",
+    salesTableTitle: "Detailed contact table",
+    salesContact: "Contact",
+    salesOwnerCol: "Owner",
+    salesProductCol: "Product",
+    salesStageCol: "Funnel",
+    salesStatusCol: "Status",
+    salesNoteCol: "Notes",
+    salesTotalContacts: "Total contacts",
+    salesQualified: "Qualified",
+    salesScheduled: "Scheduled",
+    salesNurtured: "Nurtured",
+    salesConfirmed: "Confirmed",
+    salesPaid: "Paid",
+    salesUnreachable: "Unreachable",
+    salesAllYears: "All years",
+    salesAllOwners: "All owners",
+    salesAllStages: "All funnel stages",
+    salesAllStatuses: "All statuses",
+    salesAllProducts: "All products",
+    salesAllSources: "All lead sources",
+    salesNoData: "No contacts match the current filters.",
+    salesLevelLabel: "Level Breakdown",
+    salesLevelTitle: "Contact chart by level",
+    salesAllMonths: "All months",
+    salesAllWeeks: "All weeks",
   },
 };
 
@@ -661,6 +762,438 @@ function hydrateMeta(report, summary) {
   document.getElementById("source-link").href = report.source.sheetUrl;
 }
 
+function renderSalesFilterOptions(report) {
+  const yearSelect = document.getElementById("sales-year-filter");
+  const monthSelect = document.getElementById("sales-month-filter");
+  const weekSelect = document.getElementById("sales-week-filter");
+  const ownerSelect = document.getElementById("sales-owner-filter");
+  const stageSelect = document.getElementById("sales-stage-filter");
+  const statusSelect = document.getElementById("sales-status-filter");
+  const productSelect = document.getElementById("sales-product-filter");
+  const sourceSelect = document.getElementById("sales-source-filter");
+
+  yearSelect.innerHTML = [
+    `<option value="all">${t("salesAllYears")}</option>`,
+    ...report.filters.years.map(
+      (value) => `<option value="${value}" ${state.salesFilters.year === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  const monthOptions = [
+    ...new Set(
+      report.records
+        .filter((record) => state.salesFilters.year === "all" || record.year === state.salesFilters.year)
+        .map((record) => record.monthLabel)
+        .filter(Boolean)
+    ),
+  ].sort((left, right) => left.localeCompare(right, "vi"));
+
+  monthSelect.innerHTML = [
+    `<option value="all">${t("salesAllMonths")}</option>`,
+    ...monthOptions.map(
+      (value) => `<option value="${value}" ${state.salesFilters.month === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  const weekOptions = [
+    ...new Set(
+      report.records
+        .filter((record) => {
+          if (state.salesFilters.year !== "all" && record.year !== state.salesFilters.year) {
+            return false;
+          }
+          if (state.salesFilters.month !== "all" && record.monthLabel !== state.salesFilters.month) {
+            return false;
+          }
+          return true;
+        })
+        .map((record) => {
+          const day = Number((record.date || "").split("/")[0]);
+          if (!day) {
+            return "";
+          }
+          if (day <= 7) return `${t("weekLabel")} 1`;
+          if (day <= 14) return `${t("weekLabel")} 2`;
+          if (day <= 21) return `${t("weekLabel")} 3`;
+          return `${t("weekLabel")} 4`;
+        })
+        .filter(Boolean)
+    ),
+  ];
+
+  weekSelect.innerHTML = [
+    `<option value="all">${t("salesAllWeeks")}</option>`,
+    ...weekOptions.map(
+      (value) => `<option value="${value}" ${state.salesFilters.week === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  ownerSelect.innerHTML = [
+    `<option value="all">${t("salesAllOwners")}</option>`,
+    ...report.filters.owners.map(
+      (value) => `<option value="${value}" ${state.salesFilters.owner === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  stageSelect.innerHTML = [
+    `<option value="all">${t("salesAllStages")}</option>`,
+    ...report.filters.stages.map(
+      (value) => `<option value="${value}" ${state.salesFilters.stage === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  statusSelect.innerHTML = [
+    `<option value="all">${t("salesAllStatuses")}</option>`,
+    ...report.filters.statuses.map(
+      (value) => `<option value="${value}" ${state.salesFilters.status === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  productSelect.innerHTML = [
+    `<option value="all">${t("salesAllProducts")}</option>`,
+    ...report.filters.products.map(
+      (value) => `<option value="${value}" ${state.salesFilters.product === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+
+  sourceSelect.innerHTML = [
+    `<option value="all">${t("salesAllSources")}</option>`,
+    ...report.filters.sources.map(
+      (value) => `<option value="${value}" ${state.salesFilters.source === value ? "selected" : ""}>${value}</option>`
+    ),
+  ].join("");
+}
+
+function filterSalesRecords(records) {
+  return records.filter((record) => {
+    if (state.salesFilters.year !== "all" && record.year !== state.salesFilters.year) {
+      return false;
+    }
+    if (state.salesFilters.month !== "all" && record.monthLabel !== state.salesFilters.month) {
+      return false;
+    }
+    if (state.salesFilters.week !== "all") {
+      const day = Number((record.date || "").split("/")[0]);
+      const weekLabel =
+        day <= 7 ? `${t("weekLabel")} 1` : day <= 14 ? `${t("weekLabel")} 2` : day <= 21 ? `${t("weekLabel")} 3` : `${t("weekLabel")} 4`;
+      if (weekLabel !== state.salesFilters.week) {
+        return false;
+      }
+    }
+    if (state.salesFilters.owner !== "all" && record.owner !== state.salesFilters.owner) {
+      return false;
+    }
+    if (state.salesFilters.stage !== "all" && record.stageGroup !== state.salesFilters.stage) {
+      return false;
+    }
+    if (state.salesFilters.status !== "all" && record.status !== state.salesFilters.status) {
+      return false;
+    }
+    if (state.salesFilters.product !== "all" && record.product !== state.salesFilters.product) {
+      return false;
+    }
+    if (state.salesFilters.source !== "all" && record.source !== state.salesFilters.source) {
+      return false;
+    }
+    return true;
+  });
+}
+
+function summarizeSalesRecords(records) {
+  const summary = {
+    totalContacts: records.length,
+    qualified: 0,
+    scheduled: 0,
+    nurtured: 0,
+    confirmed: 0,
+    paid: 0,
+    unreachable: 0,
+  };
+
+  for (const record of records) {
+    if (record.stageCode.startsWith("L2")) {
+      summary.qualified += 1;
+    } else if (record.stageCode.startsWith("L3")) {
+      summary.scheduled += 1;
+    } else if (record.stageCode.startsWith("L4")) {
+      summary.nurtured += 1;
+    } else if (record.stageCode.startsWith("L5")) {
+      summary.confirmed += 1;
+    } else if (record.stageCode.startsWith("L6")) {
+      summary.paid += 1;
+    } else if (record.stageCode.startsWith("L0") || record.stageCode.startsWith("L1")) {
+      summary.unreachable += 1;
+    }
+  }
+
+  return summary;
+}
+
+function sortCounterEntries(counter) {
+  return [...counter.entries()].sort((left, right) => right[1] - left[1]);
+}
+
+function buildSalesInsights(records, summary) {
+  if (!records.length) {
+    return [t("salesNoData")];
+  }
+
+  const ownerCounts = new Map();
+  const statusCounts = new Map();
+  const productCounts = new Map();
+
+  for (const record of records) {
+    ownerCounts.set(record.owner, (ownerCounts.get(record.owner) || 0) + 1);
+    statusCounts.set(record.status, (statusCounts.get(record.status) || 0) + 1);
+    productCounts.set(record.product, (productCounts.get(record.product) || 0) + 1);
+  }
+
+  const topOwner = sortCounterEntries(ownerCounts)[0];
+  const topStatus = sortCounterEntries(statusCounts)[0];
+  const topProduct = sortCounterEntries(productCounts)[0];
+  const qualificationRate = summary.totalContacts
+    ? ((summary.qualified + summary.scheduled + summary.nurtured + summary.confirmed + summary.paid) / summary.totalContacts) * 100
+    : 0;
+
+  return [
+    state.language === "vi"
+      ? `Sale xử lý nhiều contact nhất hiện tại là ${topOwner[0]} với ${number.format(topOwner[1])} contact.`
+      : `${topOwner[0]} is handling the largest volume with ${number.format(topOwner[1])} contacts.`,
+    state.language === "vi"
+      ? `Trạng thái xuất hiện nhiều nhất là "${topStatus[0]}" với ${number.format(topStatus[1])} contact.`
+      : `The most common status is "${topStatus[0]}" with ${number.format(topStatus[1])} contacts.`,
+    state.language === "vi"
+      ? `Sản phẩm nổi bật nhất theo số contact là ${topProduct[0]} với ${number.format(topProduct[1])} lead.`
+      : `${topProduct[0]} is the largest product bucket with ${number.format(topProduct[1])} leads.`,
+    state.language === "vi"
+      ? `Tỷ lệ contact đi được tới nhóm qualified trở lên đang ở mức ${qualificationRate.toFixed(1)}%.`
+      : `The share of contacts reaching qualified or beyond is currently ${qualificationRate.toFixed(1)}%.`,
+  ];
+}
+
+function buildSalesActions(summary) {
+  const actions = [];
+
+  if (summary.nurtured > summary.confirmed + summary.paid) {
+    actions.push(
+      state.language === "vi"
+        ? "Tập trung đẩy nhóm L4 đang chờ chốt sang bước confirm để tránh tồn lead lâu."
+        : "Push the L4 nurture pool toward confirmation to avoid stalled leads."
+    );
+  } else {
+    actions.push(
+      state.language === "vi"
+        ? "Giữ nhịp follow-up nhóm đã được tư vấn để tăng tỷ lệ thanh toán."
+        : "Maintain follow-up cadence on advised contacts to improve payment conversion."
+    );
+  }
+
+  if (summary.unreachable > summary.qualified) {
+    actions.push(
+      state.language === "vi"
+        ? "Rà soát lại chất lượng nguồn data vì số contact chưa kết nối đang cao hơn nhóm qualified."
+        : "Review lead-source quality because unreachable contacts currently exceed qualified contacts."
+    );
+  } else {
+    actions.push(
+      state.language === "vi"
+        ? "Ưu tiên hẹn lịch nhanh cho nhóm đã qualified để tăng tỷ lệ đi tiếp vào funnel."
+        : "Prioritize fast scheduling for qualified contacts to move more leads down the funnel."
+    );
+  }
+
+  if (summary.paid > 0) {
+    actions.push(
+      state.language === "vi"
+        ? "Tách riêng chân dung các contact đã thanh toán để nhân bản kịch bản sale hiệu quả."
+        : "Profile the paid contacts separately to replicate the strongest sales pattern."
+    );
+  } else {
+    actions.push(
+      state.language === "vi"
+        ? "Chưa có thanh toán theo bộ lọc hiện tại, cần xem lại kịch bản chốt và tiêu chí qualified."
+        : "No paid contacts are visible under the current filter, so review closing scripts and qualification criteria."
+    );
+  }
+
+  return actions;
+}
+
+function renderSalesKpis(summary) {
+  const kpis = [
+    { label: t("salesTotalContacts"), value: summary.totalContacts },
+    { label: t("salesQualified"), value: summary.qualified },
+    { label: t("salesScheduled"), value: summary.scheduled },
+    { label: t("salesNurtured"), value: summary.nurtured },
+    { label: t("salesConfirmed"), value: summary.confirmed },
+    { label: t("salesPaid"), value: summary.paid },
+    { label: t("salesUnreachable"), value: summary.unreachable },
+  ];
+  const grid = document.getElementById("sales-kpi-grid");
+  grid.innerHTML = kpis
+    .map(
+      (kpi) => `
+        <article class="kpi-card">
+          <div class="kpi-label">${kpi.label}</div>
+          <div class="kpi-value">${number.format(kpi.value)}</div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderSalesFunnel(summary) {
+  renderCustomFunnel("sales-funnel", [
+    { label: t("salesTotalContacts"), value: summary.totalContacts },
+    { label: t("salesQualified"), value: summary.qualified },
+    { label: t("salesScheduled"), value: summary.scheduled },
+    { label: t("salesNurtured"), value: summary.nurtured },
+    { label: t("salesConfirmed"), value: summary.confirmed },
+    { label: t("salesPaid"), value: summary.paid },
+  ]);
+}
+
+function renderCustomFunnel(containerId, funnel) {
+  const container = document.getElementById(containerId);
+  const maxValue = Math.max(...funnel.map((step) => step.value), 1);
+
+  container.innerHTML = funnel
+    .map(
+      (step) => `
+        <div class="funnel-step">
+          <span class="funnel-label">${step.label}</span>
+          <div class="funnel-bar">
+            <span style="width: ${(step.value / maxValue) * 100}%"></span>
+          </div>
+          <span class="funnel-value">${number.format(step.value)}</span>
+        </div>
+      `
+    )
+    .join("");
+}
+
+function renderSalesStatusList(records) {
+  const container = document.getElementById("sales-status-list");
+  if (!records.length) {
+    container.innerHTML = `<p class="empty-state">${t("salesNoData")}</p>`;
+    return;
+  }
+
+  const counts = new Map();
+  for (const record of records) {
+    counts.set(record.status, (counts.get(record.status) || 0) + 1);
+  }
+  const topStatuses = sortCounterEntries(counts).slice(0, 8);
+  const maxValue = Math.max(...topStatuses.map((entry) => entry[1]), 1);
+
+  container.innerHTML = topStatuses
+    .map(
+      ([label, value]) => `
+        <article class="sales-status-item">
+          <div class="sales-status-head">
+            <strong>${label}</strong>
+            <span>${number.format(value)}</span>
+          </div>
+          <div class="sales-bar-track">
+            <div class="sales-bar-fill" style="width: ${(value / maxValue) * 100}%"></div>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderSalesLevelChart(records) {
+  const container = document.getElementById("sales-level-chart");
+  if (!records.length) {
+    container.innerHTML = `<p class="empty-state">${t("salesNoData")}</p>`;
+    return;
+  }
+
+  const levelCounts = new Map();
+  for (const record of records) {
+    const key = record.stageCode || "UNK";
+    levelCounts.set(key, (levelCounts.get(key) || 0) + 1);
+  }
+  const levels = ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "C4", "UNK"].filter((key) => levelCounts.has(key));
+  const maxValue = Math.max(...levels.map((key) => levelCounts.get(key) || 0), 1);
+  const width = 760;
+  const height = 280;
+  const padding = { top: 20, right: 20, bottom: 40, left: 20 };
+  const innerWidth = width - padding.left - padding.right;
+  const innerHeight = height - padding.top - padding.bottom;
+  const slotWidth = innerWidth / levels.length;
+
+  const bars = levels
+    .map((level, index) => {
+      const value = levelCounts.get(level) || 0;
+      const barHeight = (value / maxValue) * (innerHeight - 18);
+      const x = padding.left + index * slotWidth + 10;
+      const y = padding.top + innerHeight - barHeight;
+      return `
+        <g>
+          <rect x="${x}" y="${y}" width="${slotWidth - 20}" height="${barHeight}" rx="10" fill="#0f8c6a"></rect>
+          <text x="${x + (slotWidth - 20) / 2}" y="${y - 6}" text-anchor="middle" fill="#42564f" font-size="11">${number.format(value)}</text>
+          <text x="${x + (slotWidth - 20) / 2}" y="${height - 12}" text-anchor="middle" fill="#597067" font-size="11">${level}</text>
+        </g>
+      `;
+    })
+    .join("");
+
+  container.innerHTML = `
+    <div class="chart-legend">
+      <span><i class="legend-swatch revenue"></i>${t("salesLevelTitle")}</span>
+    </div>
+    <svg viewBox="0 0 ${width} ${height}" class="chart-svg" aria-label="Sales level chart">
+      ${bars}
+    </svg>
+  `;
+}
+
+function renderSalesDetailTable(records) {
+  const table = document.getElementById("sales-detail-table");
+  if (!records.length) {
+    table.innerHTML = `<tr><td colspan="7">${t("salesNoData")}</td></tr>`;
+    return;
+  }
+
+  const rows = [...records].slice(0, 40);
+  table.innerHTML = rows
+    .map(
+      (record) => `
+        <tr>
+          <td>${record.date || record.year}</td>
+          <td><strong>${record.contactName}</strong><br /><span class="metric-chip">${record.phone || "-"}</span></td>
+          <td>${record.owner}</td>
+          <td>${record.product}</td>
+          <td>${record.stageGroup}</td>
+          <td>${record.status}</td>
+          <td>${record.note || record.reason || "-"}</td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
+function updateSalesDashboard() {
+  const report = state.salesReport;
+  if (!report) {
+    return;
+  }
+
+  renderSalesFilterOptions(report);
+  const records = filterSalesRecords(report.records);
+  const summary = summarizeSalesRecords(records);
+  document.getElementById("sales-subtitle").textContent = `${report.meta.subtitle} ${number.format(records.length)} contact phù hợp bộ lọc hiện tại.`;
+  renderSalesKpis(summary);
+  renderSalesFunnel(summary);
+  renderSalesStatusList(records);
+  renderSalesLevelChart(records);
+  renderList("sales-insights-list", buildSalesInsights(records, summary));
+  renderList("sales-actions-list", buildSalesActions(summary));
+  renderSalesDetailTable(records);
+}
+
 function updateDashboard() {
   applyStaticTranslations();
   renderMonthOptions(state.report);
@@ -680,10 +1213,12 @@ function updateDashboard() {
   renderDailyTable([...filteredRows].slice(-7).reverse());
   renderList("insight-list", buildInsights(summary));
   renderList("action-list", buildActions(summary, filteredRows));
+  updateSalesDashboard();
 }
 
 function init() {
   const report = window.REPORT_GSJ_DATA;
+  const salesReport = window.REPORT_GSJ_SALES_DATA;
 
   if (!report) {
     console.error("Không tìm thấy dữ liệu Report GSJ");
@@ -691,6 +1226,7 @@ function init() {
   }
 
   state.report = report;
+  state.salesReport = salesReport;
   state.selectedMonthKey = report.meta.defaultMonthKey;
 
   document.getElementById("month-filter").addEventListener("change", (event) => {
@@ -708,6 +1244,33 @@ function init() {
     state.language = state.language === "vi" ? "en" : "vi";
     updateDashboard();
   });
+
+  const salesFilterIds = [
+    ["sales-year-filter", "year"],
+    ["sales-month-filter", "month"],
+    ["sales-week-filter", "week"],
+    ["sales-owner-filter", "owner"],
+    ["sales-stage-filter", "stage"],
+    ["sales-status-filter", "status"],
+    ["sales-product-filter", "product"],
+    ["sales-source-filter", "source"],
+  ];
+  for (const [id, key] of salesFilterIds) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.addEventListener("change", (event) => {
+        state.salesFilters[key] = event.target.value;
+        if (key === "year") {
+          state.salesFilters.month = "all";
+          state.salesFilters.week = "all";
+        }
+        if (key === "month") {
+          state.salesFilters.week = "all";
+        }
+        updateSalesDashboard();
+      });
+    }
+  }
 
   updateDashboard();
 }
