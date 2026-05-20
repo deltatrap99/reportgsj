@@ -1,83 +1,81 @@
 # Report GSJ
 
-Report GSJ la mot he thong bao cao marketing duoc dung bang HTML, CSS va JavaScript thuan. Nguon du lieu hien tai duoc dong bo tu Google Sheet:
+Report GSJ là dashboard báo cáo marketing chạy bằng HTML, CSS và JavaScript thuần, đồng bộ dữ liệu từ Google Sheet và hiển thị theo tháng hoặc theo tuần.
 
-`https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/edit?gid=1858053609#gid=1858053609`
+Nguồn dữ liệu hiện tại:
 
-## Tinh nang hien tai
+- Google Sheet: `https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/edit?gid=1858053609#gid=1858053609`
 
-- Dashboard KPI duoc sinh tu Google Sheet
-- Bo loc theo thang cho toan bo dashboard
-- Bieu do so sanh RE va ME theo thang
-- Bieu do xu huong RE va ME theo ngay
-- Hieu suat theo thang tu khoi `Total`
-- Bang nhat ky ngay cho thang dang chon
-- Funnel chuyen doi C3 -> L0 -> L5
-- Insight va action duoc sinh tu du lieu
-- Script sync tu Google Sheet sang `data/marketing-report.json` va `data/marketing-report.js`
+## Tính năng
 
-## Cau truc
+- Dashboard KPI từ dữ liệu thật trong Google Sheet
+- Bộ lọc theo tháng và theo tuần
+- Chuyển ngôn ngữ hiển thị Việt / Anh
+- Chỉ số `ROAS`, `ME/RE`, `C3`, `L0`, `L5`, `ARPU`
+- Biểu đồ doanh thu và chi phí theo tháng
+- Biểu đồ doanh thu và chi phí theo ngày
+- Funnel chuyển đổi cho kỳ đang xem
+- Insight và action sinh từ dữ liệu
+
+## Cấu trúc
 
 ```text
 .
+├── assets/
+│   └── logo-gsj-05.png
+├── data/
+│   ├── marketing-report.js
+│   └── marketing-report.json
+├── scripts/
+│   ├── prepare-share.mjs
+│   └── sync-sheet.mjs
+├── app.js
 ├── index.html
 ├── styles.css
-├── app.js
-├── scripts/
-│   └── sync-sheet.mjs
-└── data/
-    ├── marketing-report.js
-    └── marketing-report.json
+└── README.md
 ```
 
-## Cach chay
+`dist/` là thư mục sinh ra khi đóng gói bản chia sẻ và không được track vào git.
 
-Mo file `index.html` truc tiep trong trinh duyet.
+## Cách chạy
 
-De dong bo du lieu moi nhat tu Google Sheet:
-
-```bash
-node scripts/sync-sheet.mjs
-```
-
-Automation de sync hang ngay da duoc tao voi lich 07:00 theo gio Viet Nam.
-
-## Chia se cho nguoi khac
-
-De tao mot ban chia se tinh co the gui cho nguoi khac mo truc tiep:
-
-```bash
-node scripts/prepare-share.mjs
-```
-
-Sau khi chay, project se sinh thu muc:
-
-```text
-dist/report-gsj-share
-```
-
-Anh co the zip ca thu muc nay va gui cho nguoi khac. Nguoi nhan chi can giai nen va mo `index.html`.
-
-Neu muon chia se bang link online, co the dua thu muc `dist/report-gsj-share` len Netlify, Vercel hoac GitHub Pages.
-
-Neu muon chay bang local server:
+Mở trực tiếp [index.html](/Users/jgdelta/Documents/New%20project/index.html) bằng trình duyệt, hoặc chạy local server:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Sau do truy cap `http://localhost:8080`.
+Sau đó truy cập `http://localhost:8080`.
 
-## Huong mo rong de thanh he thong bao cao that
+## Đồng bộ dữ liệu
 
-1. Bo sung backend proxy hoac cron sync de tu dong cap nhat sheet.
-2. Tach rieng mapping cho tung tab hoac tung brand neu sheet mo rong.
-3. Bo sung bo loc theo thang, nhom dich vu, team va nguon.
-4. Them authentication, permission va lich su snapshot.
-5. Xuat PDF hoac dashboard management view.
+Để đồng bộ dữ liệu mới nhất từ Google Sheet:
 
-## Dinh huong UI/UX
+```bash
+node scripts/sync-sheet.mjs
+```
 
-- Giao dien chuyen nghiep, tap trung vao KPI va insight
-- Mau sac phan biet ro hieu qua va rui ro
-- Co the mo rong thanh executive dashboard va campaign detail view
+Project cũng đã có automation sync hằng ngày lúc `07:00` theo giờ Việt Nam.
+
+## Chia sẻ cho người khác
+
+Để tạo bản chia sẻ tĩnh:
+
+```bash
+node scripts/prepare-share.mjs
+```
+
+Lệnh này sẽ sinh thư mục:
+
+```text
+dist/report-gsj-share
+```
+
+Anh có thể zip cả thư mục đó rồi gửi cho người khác, hoặc đưa nó lên Netlify, Vercel hay GitHub Pages để chia sẻ bằng link web.
+
+## Gợi ý mở rộng
+
+1. Thêm nút `Sync now` ngay trên dashboard.
+2. Kết nối backend hoặc cron server để tự động refresh dữ liệu.
+3. Bổ sung bộ lọc theo campaign, nguồn, team hoặc thị trường.
+4. Thêm export PDF hoặc chế độ xem cho management.
