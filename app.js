@@ -43,6 +43,7 @@ const translations = {
     refreshHint: "Mở bằng localhost hoặc bản deploy để cập nhật trực tiếp dữ liệu mới nhất.",
     refreshSuccess: "Đã tải dữ liệu mới nhất vào dashboard.",
     refreshFileMode: "Đang mở bằng file:// nên không thể tải lại dữ liệu trực tiếp. Hãy dùng localhost hoặc bản deploy.",
+    refreshServerMode: "Server hiện tại chưa có endpoint đồng bộ thật. Chỉ có thể tải lại file dữ liệu đang host.",
     refreshError: "Không thể cập nhật dữ liệu lúc này. Kiểm tra lại nguồn dữ liệu hoặc server.",
     portfolioView: "Portfolio View",
     monthlyCompare: "So sánh doanh thu và chi phí theo tháng",
@@ -124,6 +125,17 @@ const translations = {
     salesLevelTitle: "Biểu đồ contact theo level",
     salesAllMonths: "Tất cả tháng",
     salesAllWeeks: "Tất cả tuần",
+    salesFunnelDetailLabel: "Funnel Detail",
+    salesFunnelDetailTitle: "Báo cáo chi tiết theo Funnel",
+    salesFunnelDetailHint: "Mẫu số: L1.1/L0, L1.2/L0, L3.1/L3, (L2.1+L2.2+L3.2)/(L2+L3), Học phí cao/L4.",
+    salesDetailMonth: "Tháng",
+    salesDetailProduct: "Sản phẩm",
+    salesMetricWrongLead: "Tỷ lệ sai số",
+    salesMetricNoContact: "Tỷ lệ không liên lạc",
+    salesMetricDeclineJoin: "Tỷ lệ từ chối tham gia",
+    salesMetricNoSchedule: "Tỷ lệ chưa chốt lịch",
+    salesMetricTuition: "Tỷ lệ từ chối do học phí",
+    salesExportFunnelDetail: "Xuất Excel",
   },
   en: {
     navOverview: "Overview",
@@ -147,6 +159,7 @@ const translations = {
     refreshHint: "Open with localhost or the deployed site to fetch the latest data directly.",
     refreshSuccess: "The dashboard has loaded the latest data.",
     refreshFileMode: "The dashboard is open with file://, so it cannot fetch updated data directly. Use localhost or the deployed site.",
+    refreshServerMode: "This server does not expose the real sync endpoint yet. It can only reload the hosted data files.",
     refreshError: "The dashboard could not refresh data right now. Check the data source or server.",
     portfolioView: "Portfolio View",
     monthlyCompare: "Monthly revenue vs ad cost",
@@ -228,6 +241,17 @@ const translations = {
     salesLevelTitle: "Contact chart by level",
     salesAllMonths: "All months",
     salesAllWeeks: "All weeks",
+    salesFunnelDetailLabel: "Funnel Detail",
+    salesFunnelDetailTitle: "Detailed funnel report",
+    salesFunnelDetailHint: "Denominators: L1.1/L0, L1.2/L0, L3.1/L3, (L2.1+L2.2+L3.2)/(L2+L3), high tuition/L4.",
+    salesDetailMonth: "Month",
+    salesDetailProduct: "Product",
+    salesMetricWrongLead: "Wrong-lead rate",
+    salesMetricNoContact: "No-contact rate",
+    salesMetricDeclineJoin: "Decline-to-join rate",
+    salesMetricNoSchedule: "Not-scheduled rate",
+    salesMetricTuition: "High-tuition refusal rate",
+    salesExportFunnelDetail: "Export Excel",
   },
 };
 
@@ -535,6 +559,26 @@ async function refreshDashboardData() {
   setRefreshState("refreshLoading", true);
 
   try {
+    let report;
+    let salesReport;
+    let syncedFromEndpoint = false;
+
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      const syncResponse = await fetch("/api/sync", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (syncResponse.ok) {
+        await syncResponse.json();
+        syncedFromEndpoint = true;
+      } else if (syncResponse.status !== 404) {
+        throw new Error("Sync endpoint failed");
+      }
+    }
+
     const nonce = `ts=${Date.now()}`;
     const [marketingResponse, salesResponse] = await Promise.all([
       fetch(`data/marketing-report.json?${nonce}`, { cache: "no-store" }),
@@ -545,7 +589,11 @@ async function refreshDashboardData() {
       throw new Error("Fetch failed");
     }
 
-    const [report, salesReport] = await Promise.all([marketingResponse.json(), salesResponse.json()]);
+    [report, salesReport] = await Promise.all([marketingResponse.json(), salesResponse.json()]);
+
+    if (!syncedFromEndpoint) {
+      setRefreshState("refreshServerMode");
+    }
 
     state.report = report;
     state.salesReport = salesReport;
@@ -556,7 +604,9 @@ async function refreshDashboardData() {
     }
 
     updateDashboard();
-    setRefreshState("refreshSuccess");
+    if (syncedFromEndpoint) {
+      setRefreshState("refreshSuccess");
+    }
   } catch (error) {
     console.error("Khong the cap nhat du lieu", error);
     setRefreshState("refreshError");
@@ -1009,6 +1059,277 @@ function summarizeSalesRecords(records) {
   return summary;
 }
 
+const salesProductBuckets = [
+  {
+    key: "NCKH",
+    labelVi: "NCKH",
+    labelEn: "NCKH",
+    match: (product) => product.includes("NCKH"),
+  },
+  {
+    key: "KHTH",
+    labelVi: "KHTH",
+    labelEn: "KHTH",
+    match: (product) => product.includes("KHTH"),
+  },
+  {
+    key: "ABS",
+    labelVi: "ABS",
+    labelEn: "ABS",
+    match: (product) => product.includes("ABS"),
+  },
+  {
+    key: "TRAI_HE",
+    labelVi: "Trại hè",
+    labelEn: "Summer camp",
+    match: (product) =>
+      product.includes("TRẠI") ||
+      product.includes("TRAI") ||
+      product.includes("TRẠI HÈ") ||
+      product.includes("TRAIHE"),
+  },
+];
+
+function normalizeSalesProductLabel(product) {
+  return String(product || "")
+    .trim()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toUpperCase();
+}
+
+function getSalesProductBucket(product) {
+  const normalized = normalizeSalesProductLabel(product);
+  return salesProductBuckets.find((bucket) => bucket.match(normalized)) || null;
+}
+
+function getSalesMonthNumber(record) {
+  const monthMatch = String(record.monthLabel || "").match(/(\d{1,2})/);
+  if (monthMatch) {
+    return Number(monthMatch[1]);
+  }
+
+  const [, monthPart] = String(record.date || "").split("/");
+  return Number(monthPart) || 0;
+}
+
+function getSalesMonthDisplay(monthNumber) {
+  if (!monthNumber) {
+    return state.language === "vi" ? "Không rõ tháng" : "Unknown month";
+  }
+
+  return `${t("monthLabel")} ${monthNumber}`;
+}
+
+function matchesSalesStatus(record, prefixes) {
+  return prefixes.some((prefix) => String(record.status || "").startsWith(prefix));
+}
+
+function formatSalesRate(numerator, denominator) {
+  if (!denominator) {
+    return "-";
+  }
+
+  const rate = (numerator / denominator) * 100;
+  return `${rate.toFixed(1)}% (${number.format(numerator)}/${number.format(denominator)})`;
+}
+
+function getSalesRateValue(numerator, denominator) {
+  if (!denominator) {
+    return null;
+  }
+
+  return (numerator / denominator) * 100;
+}
+
+function getHeatmapStyle(rate) {
+  if (rate === null || Number.isNaN(rate)) {
+    return 'style="background: rgba(22, 48, 41, 0.05); color: #597067;"';
+  }
+
+  const intensity = Math.max(0, Math.min(rate / 50, 1));
+  const hue = 140 - intensity * 132;
+  const bgAlpha = 0.16 + intensity * 0.28;
+  const borderAlpha = 0.14 + intensity * 0.24;
+  return `style="background: hsla(${hue}, 72%, 54%, ${bgAlpha}); box-shadow: inset 0 0 0 1px hsla(${hue}, 70%, 35%, ${borderAlpha}); color: #14221d;"`;
+}
+
+function buildSalesFunnelDetailRows(records) {
+  const grouped = new Map();
+
+  for (const record of records) {
+    const bucket = getSalesProductBucket(record.product);
+    if (!bucket) {
+      continue;
+    }
+
+    const monthNumber = getSalesMonthNumber(record);
+    const groupKey = `${monthNumber}-${bucket.key}`;
+    if (!grouped.has(groupKey)) {
+      grouped.set(groupKey, {
+        monthNumber,
+        productKey: bucket.key,
+        productLabel: state.language === "vi" ? bucket.labelVi : bucket.labelEn,
+        l0: 0,
+        l3: 0,
+        l4: 0,
+        l2OrL3: 0,
+        wrongLead: 0,
+        noContact: 0,
+        declineJoin: 0,
+        noSchedule: 0,
+        tuitionRefusal: 0,
+      });
+    }
+
+    const entry = grouped.get(groupKey);
+    if (record.stageCode === "L0") {
+      entry.l0 += 1;
+    }
+    if (String(record.stageCode || "").startsWith("L3")) {
+      entry.l3 += 1;
+    }
+    if (String(record.stageCode || "").startsWith("L4")) {
+      entry.l4 += 1;
+    }
+    if (String(record.stageCode || "").startsWith("L2") || String(record.stageCode || "").startsWith("L3")) {
+      entry.l2OrL3 += 1;
+    }
+    if (matchesSalesStatus(record, ["L1.1"])) {
+      entry.wrongLead += 1;
+    }
+    if (matchesSalesStatus(record, ["L1.2"])) {
+      entry.noContact += 1;
+    }
+    if (matchesSalesStatus(record, ["L3.1"])) {
+      entry.declineJoin += 1;
+    }
+    if (matchesSalesStatus(record, ["L2.1", "L2.2", "L3.2"])) {
+      entry.noSchedule += 1;
+    }
+    if (matchesSalesStatus(record, ["L4.3.2 Từ chối do học phí"])) {
+      entry.tuitionRefusal += 1;
+    }
+  }
+
+  return [...grouped.values()]
+    .filter((entry) => entry.monthNumber > 0 && entry.l0 + entry.l3 + entry.l4 + entry.l2OrL3 > 0)
+    .sort((left, right) => {
+    if (left.monthNumber !== right.monthNumber) {
+      return left.monthNumber - right.monthNumber;
+    }
+
+    const leftOrder = salesProductBuckets.findIndex((bucket) => bucket.key === left.productKey);
+    const rightOrder = salesProductBuckets.findIndex((bucket) => bucket.key === right.productKey);
+    return leftOrder - rightOrder;
+    });
+}
+
+function renderSalesFunnelDetail(records) {
+  const table = document.getElementById("sales-funnel-detail-table");
+  const rows = buildSalesFunnelDetailRows(records);
+
+  if (!rows.length) {
+    table.innerHTML = `<tr><td colspan="8" class="sales-detail-empty">${t("salesNoData")}</td></tr>`;
+    return;
+  }
+
+  table.innerHTML = rows
+    .map(
+      (row) => {
+        const wrongLeadRate = getSalesRateValue(row.wrongLead, row.l0);
+        const noContactRate = getSalesRateValue(row.noContact, row.l0);
+        const declineJoinRate = getSalesRateValue(row.declineJoin, row.l3);
+        const noScheduleRate = getSalesRateValue(row.noSchedule, row.l2OrL3);
+        const tuitionRate = getSalesRateValue(row.tuitionRefusal, row.l4);
+
+        return `
+        <tr>
+          <td><strong>${getSalesMonthDisplay(row.monthNumber)}</strong></td>
+          <td>${row.productLabel}</td>
+          <td>${number.format(row.l0)}</td>
+          <td><span class="heat-cell" ${getHeatmapStyle(wrongLeadRate)}>${formatSalesRate(row.wrongLead, row.l0)}</span></td>
+          <td><span class="heat-cell" ${getHeatmapStyle(noContactRate)}>${formatSalesRate(row.noContact, row.l0)}</span></td>
+          <td><span class="heat-cell" ${getHeatmapStyle(declineJoinRate)}>${formatSalesRate(row.declineJoin, row.l3)}</span></td>
+          <td><span class="heat-cell" ${getHeatmapStyle(noScheduleRate)}>${formatSalesRate(row.noSchedule, row.l2OrL3)}</span></td>
+          <td><span class="heat-cell" ${getHeatmapStyle(tuitionRate)}>${formatSalesRate(row.tuitionRefusal, row.l4)}</span></td>
+        </tr>
+      `;
+      }
+    )
+    .join("");
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function exportSalesFunnelDetail() {
+  const rows = buildSalesFunnelDetailRows(filterSalesRecords(state.salesReport?.records || []));
+  if (!rows.length) {
+    return;
+  }
+
+  const headers = [
+    t("salesDetailMonth"),
+    t("salesDetailProduct"),
+    "L0",
+    t("salesMetricWrongLead"),
+    t("salesMetricNoContact"),
+    t("salesMetricDeclineJoin"),
+    t("salesMetricNoSchedule"),
+    t("salesMetricTuition"),
+  ];
+
+  const bodyRows = rows
+    .map(
+      (row) => `
+        <tr>
+          <td>${escapeHtml(getSalesMonthDisplay(row.monthNumber))}</td>
+          <td>${escapeHtml(row.productLabel)}</td>
+          <td>${number.format(row.l0)}</td>
+          <td>${escapeHtml(formatSalesRate(row.wrongLead, row.l0))}</td>
+          <td>${escapeHtml(formatSalesRate(row.noContact, row.l0))}</td>
+          <td>${escapeHtml(formatSalesRate(row.declineJoin, row.l3))}</td>
+          <td>${escapeHtml(formatSalesRate(row.noSchedule, row.l2OrL3))}</td>
+          <td>${escapeHtml(formatSalesRate(row.tuitionRefusal, row.l4))}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  const workbook = `
+    <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel">
+      <head>
+        <meta charset="utf-8" />
+      </head>
+      <body>
+        <table border="1">
+          <thead>
+            <tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>
+          </thead>
+          <tbody>${bodyRows}</tbody>
+        </table>
+      </body>
+    </html>
+  `;
+
+  const blob = new Blob([workbook], { type: "application/vnd.ms-excel;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  const stamp = new Date().toISOString().slice(0, 10);
+  link.href = url;
+  link.download = `gsj-funnel-detail-${stamp}.xls`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
 function sortCounterEntries(counter) {
   return [...counter.entries()].sort((left, right) => right[1] - left[1]);
 }
@@ -1269,6 +1590,7 @@ function updateSalesDashboard() {
   renderSalesFunnel(summary);
   renderSalesStatusList(records);
   renderSalesLevelChart(records);
+  renderSalesFunnelDetail(records);
   renderList("sales-insights-list", buildSalesInsights(records, summary));
   renderList("sales-actions-list", buildSalesActions(summary));
   renderSalesDetailTable(records);
@@ -1327,6 +1649,10 @@ function init() {
 
   document.getElementById("refresh-data").addEventListener("click", () => {
     refreshDashboardData();
+  });
+
+  document.getElementById("export-sales-funnel-detail").addEventListener("click", () => {
+    exportSalesFunnelDetail();
   });
 
   const salesFilterIds = [

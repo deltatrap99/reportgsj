@@ -2,7 +2,7 @@ window.REPORT_GSJ_DATA = {
   "source": {
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/edit?gid=1858053609#gid=1858053609",
     "exportUrl": "https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/export?format=csv&gid=1858053609",
-    "syncedAt": "14:56:29 20/5/2026",
+    "syncedAt": "10:32:42 25/5/2026",
     "sourceType": "google-sheet-csv"
   },
   "meta": {
@@ -12,10 +12,10 @@ window.REPORT_GSJ_DATA = {
     "defaultMonthKey": "05"
   },
   "summary": {
-    "revenue": 310000000,
+    "revenue": 342000000,
     "expense": 27660202,
-    "efficiency": 8.9,
-    "arpu": 23846154
+    "efficiency": 8.1,
+    "arpu": 24428571
   },
   "health": {
     "score": 98,
@@ -24,9 +24,9 @@ window.REPORT_GSJ_DATA = {
   "kpis": [
     {
       "label": "Revenue",
-      "value": 310000000,
+      "value": 342000000,
       "type": "currency",
-      "change": -45.384073291050036,
+      "change": -39.74630021141649,
       "changeType": "percent"
     },
     {
@@ -38,30 +38,30 @@ window.REPORT_GSJ_DATA = {
     },
     {
       "label": "ME/RE",
-      "value": 8.9,
+      "value": 8.1,
       "type": "percent",
-      "change": 1,
+      "change": 0.1999999999999993,
       "changeType": "percent"
     },
     {
       "label": "C3",
-      "value": 169,
+      "value": 201,
       "type": "number",
-      "change": -12.435233160621761,
+      "change": 4.145077720207254,
       "changeType": "percent"
     },
     {
       "label": "L0",
-      "value": 152,
+      "value": 184,
       "type": "number",
-      "change": -13.142857142857142,
+      "change": 5.142857142857142,
       "changeType": "percent"
     },
     {
       "label": "L5 Luy Ke",
-      "value": 13,
+      "value": 14,
       "type": "number",
-      "change": -40.909090909090914,
+      "change": -36.36363636363637,
       "changeType": "percent"
     }
   ],
@@ -121,15 +121,15 @@ window.REPORT_GSJ_DATA = {
     {
       "label": "01/05 - 31/05",
       "shortLabel": "05",
-      "revenue": 310000000,
+      "revenue": 342000000,
       "expense": 27660202,
-      "efficiency": 8.9,
-      "c3": 169,
-      "l0": 152,
-      "l5": 13,
-      "c3Cost": 163670,
-      "l0Cost": 181975,
-      "arpu": 23846154
+      "efficiency": 8.1,
+      "c3": 201,
+      "l0": 184,
+      "l5": 14,
+      "c3Cost": 137613,
+      "l0Cost": 150327,
+      "arpu": 24428571
     }
   ],
   "availableMonths": [
@@ -1221,8 +1221,40 @@ window.REPORT_GSJ_DATA = {
         "date": "20/05",
         "revenue": 0,
         "expense": 0,
+        "c3": 9,
+        "l0": 9,
+        "l5": 0
+      },
+      {
+        "date": "21/05",
+        "revenue": 32000000,
+        "expense": 0,
+        "c3": 10,
+        "l0": 10,
+        "l5": 1
+      },
+      {
+        "date": "22/05",
+        "revenue": 0,
+        "expense": 0,
         "c3": 6,
-        "l0": 5,
+        "l0": 6,
+        "l5": 0
+      },
+      {
+        "date": "24/05",
+        "revenue": 0,
+        "expense": 0,
+        "c3": 12,
+        "l0": 12,
+        "l5": 0
+      },
+      {
+        "date": "25/05",
+        "revenue": 0,
+        "expense": 0,
+        "c3": 1,
+        "l0": 0,
         "l5": 0
       }
     ]
@@ -1230,24 +1262,56 @@ window.REPORT_GSJ_DATA = {
   "currentFunnel": [
     {
       "label": "C3",
-      "value": 169
+      "value": 201
     },
     {
       "label": "L0",
-      "value": 152
+      "value": 184
     },
     {
       "label": "L5",
-      "value": 13
+      "value": 14
     }
   ],
   "recentDaily": [
     {
-      "date": "20/05",
+      "date": "25/05",
+      "revenue": 0,
+      "expense": 0,
+      "c3": 1,
+      "l0": 0,
+      "l5": 0
+    },
+    {
+      "date": "24/05",
+      "revenue": 0,
+      "expense": 0,
+      "c3": 12,
+      "l0": 12,
+      "l5": 0
+    },
+    {
+      "date": "22/05",
       "revenue": 0,
       "expense": 0,
       "c3": 6,
-      "l0": 5,
+      "l0": 6,
+      "l5": 0
+    },
+    {
+      "date": "21/05",
+      "revenue": 32000000,
+      "expense": 0,
+      "c3": 10,
+      "l0": 10,
+      "l5": 1
+    },
+    {
+      "date": "20/05",
+      "revenue": 0,
+      "expense": 0,
+      "c3": 9,
+      "l0": 9,
       "l5": 0
     },
     {
@@ -1265,45 +1329,13 @@ window.REPORT_GSJ_DATA = {
       "c3": 22,
       "l0": 20,
       "l5": 1
-    },
-    {
-      "date": "17/05",
-      "revenue": 42000000,
-      "expense": 1774249,
-      "c3": 0,
-      "l0": 0,
-      "l5": 2
-    },
-    {
-      "date": "16/05",
-      "revenue": 23000000,
-      "expense": 2024211,
-      "c3": 3,
-      "l0": 2,
-      "l5": 1
-    },
-    {
-      "date": "15/05",
-      "revenue": 0,
-      "expense": 1708797,
-      "c3": 5,
-      "l0": 4,
-      "l5": 0
-    },
-    {
-      "date": "14/05",
-      "revenue": 7000000,
-      "expense": 548962,
-      "c3": 7,
-      "l0": 7,
-      "l5": 1
     }
   ],
   "insights": [
-    "Thang 05 ghi nhan RE 310.000.000 ₫ va ME/RE 8.9%.",
-    "Doanh thu thay doi giam 45.4% so voi ky truoc.",
-    "Ty le chuyen doi L0/C3 hien tai dat 89.9%.",
-    "Gia C3 dang o muc 163.670 ₫ va ARPU dat 23.846.154 ₫."
+    "Thang 05 ghi nhan RE 342.000.000 ₫ va ME/RE 8.1%.",
+    "Doanh thu thay doi giam 39.7% so voi ky truoc.",
+    "Ty le chuyen doi L0/C3 hien tai dat 91.5%.",
+    "Gia C3 dang o muc 137.613 ₫ va ARPU dat 24.428.571 ₫."
   ],
   "actions": [
     "Duy tri muc chi phi hien tai va uu tien ngan sach cho nhom co doanh thu on dinh.",

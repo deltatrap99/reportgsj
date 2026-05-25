@@ -292,6 +292,38 @@
             </article>
           </section>
 
+          <article class="panel panel-nested sales-grid">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow" data-i18n="salesFunnelDetailLabel">Funnel Detail</p>
+                <h3 data-i18n="salesFunnelDetailTitle">Báo cáo chi tiết theo Funnel</h3>
+                <p class="panel-hint sales-detail-hint" data-i18n="salesFunnelDetailHint">
+                  Mẫu số: L1.1/L0, L1.2/L0, L3.1/L3, (L2.1+L2.2+L3.2)/(L2+L3), Học phí cao/L4.
+                </p>
+              </div>
+              <button id="export-sales-funnel-detail" class="secondary-button" type="button" data-i18n="salesExportFunnelDetail">
+                Xuất Excel
+              </button>
+            </div>
+            <div class="table-wrap">
+              <table class="sales-funnel-detail-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="salesDetailMonth">Tháng</th>
+                    <th data-i18n="salesDetailProduct">Sản phẩm</th>
+                    <th>L0</th>
+                    <th data-i18n="salesMetricWrongLead">Tỷ lệ sai số</th>
+                    <th data-i18n="salesMetricNoContact">Tỷ lệ không liên lạc</th>
+                    <th data-i18n="salesMetricDeclineJoin">Tỷ lệ từ chối tham gia</th>
+                    <th data-i18n="salesMetricNoSchedule">Tỷ lệ chưa chốt lịch</th>
+                    <th data-i18n="salesMetricTuition">Tỷ lệ từ chối do học phí</th>
+                  </tr>
+                </thead>
+                <tbody id="sales-funnel-detail-table"></tbody>
+              </table>
+            </div>
+          </article>
+
           <section class="grid-two sales-grid">
             <article class="panel panel-nested">
               <div class="panel-head">

@@ -326,6 +326,11 @@ body::before {
   margin-top: 8px;
 }
 
+.sales-detail-hint {
+  max-width: 860px;
+  line-height: 1.55;
+}
+
 .kpi-card {
   padding: 20px 20px 18px;
   background:
@@ -431,6 +436,22 @@ body::before {
 
 .refresh-status[data-state="error"] {
   color: var(--danger);
+}
+
+.secondary-button {
+  border: 1px solid rgba(22, 48, 41, 0.1);
+  border-radius: 16px;
+  min-height: 46px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background: #ffffff;
 }
 
 .filter-label {
@@ -684,6 +705,26 @@ tbody tr:hover {
   background: rgba(15, 140, 106, 0.05);
 }
 
+.sales-funnel-detail-table td,
+.sales-funnel-detail-table th {
+  white-space: nowrap;
+}
+
+.heat-cell {
+  display: inline-block;
+  min-width: 144px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sales-detail-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 18px 14px;
+}
+
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -765,6 +806,10 @@ tbody tr:hover {
     width: 100%;
   }
 
+  .secondary-button {
+    width: 100%;
+  }
+
   .brand {
     margin-bottom: 0;
   }
@@ -810,7 +855,8 @@ tbody tr:hover {
   .toolbar-group,
   .month-filter,
   .language-toggle,
-  .refresh-button {
+  .refresh-button,
+  .secondary-button {
     width: 100%;
   }
 

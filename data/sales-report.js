@@ -2,7 +2,7 @@ window.REPORT_GSJ_SALES_DATA = {
   "source": {
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1s_j6nUGTpi3bCQJtyCf7llbtYvRL3W2_cPuenErY-Vg/edit?usp=sharing",
     "exportUrl": "https://docs.google.com/spreadsheets/d/1s_j6nUGTpi3bCQJtyCf7llbtYvRL3W2_cPuenErY-Vg/export?format=xlsx",
-    "syncedAt": "15:51:01 20/05/2026",
+    "syncedAt": "10:35:51 25/05/2026",
     "sourceType": "google-sheet-xlsx"
   },
   "meta": {
@@ -10,30 +10,30 @@ window.REPORT_GSJ_SALES_DATA = {
     "subtitle": "Theo dõi funnel, tình trạng contact, sale owner và insight từ dữ liệu CRM / telesales."
   },
   "summary": {
-    "totalContacts": 4850,
-    "qualified": 685,
-    "scheduled": 166,
-    "nurtured": 1483,
+    "totalContacts": 4917,
+    "qualified": 684,
+    "scheduled": 183,
+    "nurtured": 1485,
     "confirmed": 122,
-    "paid": 40,
-    "unreachable": 1173
+    "paid": 41,
+    "unreachable": 1174
   },
   "stageCounts": [
     {
       "label": "Đã tư vấn / đang chờ chốt",
-      "value": 1483
+      "value": 1485
     },
     {
       "label": "Không rõ",
-      "value": 1128
+      "value": 1173
     },
     {
       "label": "Không kết nối / không quan tâm",
-      "value": 806
+      "value": 807
     },
     {
       "label": "Qualified / tìm hiểu",
-      "value": 685
+      "value": 684
     },
     {
       "label": "Raw / trùng / fail",
@@ -41,7 +41,7 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "Hẹn lịch / trải nghiệm",
-      "value": 166
+      "value": 183
     },
     {
       "label": "Đã xác nhận",
@@ -49,11 +49,11 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "Trùng số",
-      "value": 42
+      "value": 44
     },
     {
       "label": "Đã thanh toán",
-      "value": 40
+      "value": 41
     },
     {
       "label": "Khác",
@@ -71,7 +71,7 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "L1.2 Không liên lạc được / máy bận",
-      "value": 325
+      "value": 327
     },
     {
       "label": "L4.1 Đã tư vấn, đang cân nhắc",
@@ -83,11 +83,15 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "value": 217
+      "value": 224
     },
     {
       "label": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "value": 133
+      "value": 127
+    },
+    {
+      "label": "L3.1 Từ chối tham gia",
+      "value": 95
     },
     {
       "label": "L2.3 Không có nhu cầu",
@@ -99,15 +103,11 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "L2.3 Từ chối do địa lý / không tham gia offline",
-      "value": 86
+      "value": 85
     },
     {
       "label": "L4.2 Cần trao đổi thêm với gia đình",
-      "value": 86
-    },
-    {
-      "label": "L3.1 Từ chối tham gia",
-      "value": 77
+      "value": 83
     },
     {
       "label": "L5 Đã xác nhận tham gia",
@@ -127,29 +127,29 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "L4.3 Từ chối sau tư vấn",
-      "value": 55
+      "value": 59
     },
     {
       "label": "L4.3.2 Từ chối do gia đình / học sinh",
       "value": 48
     },
     {
-      "label": "L1.3 Lead phản hồi nhưng không quan tâm",
-      "value": 42
+      "label": "C4 Trùng số",
+      "value": 44
     },
     {
-      "label": "C4 Trùng số",
+      "label": "L1.3 Lead phản hồi nhưng không quan tâm",
       "value": 42
     }
   ],
   "ownerCounts": [
     {
       "label": "Ánh",
-      "value": 1535
+      "value": 1538
     },
     {
       "label": "Quyên",
-      "value": 1463
+      "value": 1464
     },
     {
       "label": "Trân",
@@ -161,11 +161,11 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "Lan Anh",
-      "value": 103
+      "value": 116
     },
     {
       "label": "Hiền",
-      "value": 85
+      "value": 104
     },
     {
       "label": "Nguyện",
@@ -177,7 +177,7 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "Hạnh",
-      "value": 45
+      "value": 43
     },
     {
       "label": "Ngọc Ánh",
@@ -195,7 +195,7 @@ window.REPORT_GSJ_SALES_DATA = {
   "productCounts": [
     {
       "label": "NCKH",
-      "value": 2255
+      "value": 2292
     },
     {
       "label": "KHTN",
@@ -203,11 +203,11 @@ window.REPORT_GSJ_SALES_DATA = {
     },
     {
       "label": "ABS",
-      "value": 324
+      "value": 329
     },
     {
       "label": "KHTH",
-      "value": 309
+      "value": 315
     },
     {
       "label": "GYS",
@@ -262,15 +262,15 @@ window.REPORT_GSJ_SALES_DATA = {
       "value": 3
     },
     {
+      "label": "ChatBanDan",
+      "value": 3
+    },
+    {
       "label": "Business",
       "value": 2
     },
     {
       "label": "SD",
-      "value": 2
-    },
-    {
-      "label": "Trai UC",
       "value": 2
     }
   ],
@@ -343,18 +343,18 @@ window.REPORT_GSJ_SALES_DATA = {
   "yearCounts": [
     {
       "label": "2025",
-      "value": 3781
+      "value": 3813
     },
     {
       "label": "2026",
-      "value": 1069
+      "value": 1104
     }
   ],
   "insights": [
-    "Sale đang xử lý nhiều contact nhất là Ánh với 1535 contact.",
+    "Sale đang xử lý nhiều contact nhất là Ánh với 1538 contact.",
     "Trạng thái xuất hiện nhiều nhất là 'L4.3 Đã trải nghiệm nhưng từ chối học' với 834 contact.",
-    "Tỷ lệ qualified trên tổng contact đang ở mức 14.1%.",
-    "Có 40 contact đã thanh toán thành công, tương đương 0.8% tổng data."
+    "Tỷ lệ qualified trên tổng contact đang ở mức 13.9%.",
+    "Có 41 contact đã thanh toán thành công, tương đương 0.8% tổng data."
   ],
   "actions": [
     "Tập trung review nhóm trạng thái L4 để đẩy nhanh bước chốt sale.",
@@ -400,6 +400,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "Alevel",
       "Business",
       "ChatBanDan",
+      "FA",
       "GYS",
       "Hướng nghiệp",
       "ICGSE/ALEVEL",
@@ -60998,6 +60999,518 @@ window.REPORT_GSJ_SALES_DATA = {
       "reason": ""
     },
     {
+      "year": "2025",
+      "date": "20/05/2026",
+      "monthLabel": "",
+      "contactName": "Con Tạ Trần Nam Khánh",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "20/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Vân Anh",
+      "phone": "Lớp 11",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "20/05/2026",
+      "monthLabel": "",
+      "contactName": "Trần Linh",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Huong Vu thi lan",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Lê Tiên Tiến",
+      "phone": "Lớp 6",
+      "product": "KHTH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Thu Giang",
+      "phone": "zalo e nhé",
+      "product": "KHTH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Vũ Hương",
+      "phone": "gọi 15h",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Hồ Ngọc Phúc Bảo",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Nguyen",
+      "phone": "Lớp 10",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Ngô Thu Thủy",
+      "phone": "Lớp 11",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Linh",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Minh nguyệt",
+      "phone": "",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nhân",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "La Ho",
+      "phone": "Lớp 10",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Anh Thu",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Tên con là : Đỗ Hà Phương Linh",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Trần Thảo Nguyên",
+      "phone": "",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Minh Tâm",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Trịnh Vương",
+      "phone": "Lớp 10",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "The kien",
+      "phone": "Lớp 10",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phương Anh",
+      "phone": "",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Do Xuan Dien",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Ha",
+      "phone": "Lớp 6",
+      "product": "KHTH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Dang Kim Hoang",
+      "phone": "",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phan Phương",
+      "phone": "",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Hiếu Gia Huy",
+      "phone": "Lớp 11",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phạm Nhung",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Huynh Uyen",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Hoang Hang",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "bạn Hảo Linh",
+      "phone": "Lớp 11",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Hoang Anh minh Ngọc",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "C Linh",
+      "phone": "Lớp 10",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
       "year": "2026",
       "date": "17/12/2025",
       "monthLabel": "THÁNG 1",
@@ -68370,7 +68883,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.3 Lead phản hồi nhưng không quan tâm",
-      "note": "8/3: nghe máy nhưng ko nói gì tắt điện thoại 9/3: Mẹ có 2 bạn, 1 bạn lớp 7 và 1 bạn lớp 9, k có định hướng du học quan tâm đến NCKH, ,đã kết bạn zalo và gửi broucher về Ctr NCKH cho mẹ tham khảo số dưới, số trên k có zalo 16/3 Thôi được rồi, chị đang xem, chị đang bận nhé 4/4: KNM 7/5: gửi thêm dự án về AI cho mẹ tham khảo, gửi thêm một số giải thưởng",
+      "note": "8/3: nghe máy nhưng ko nói gì tắt điện thoại 9/3: Mẹ có 2 bạn, 1 bạn lớp 7 và 1 bạn lớp 9, k có định hướng du học quan tâm đến NCKH, ,đã kết bạn zalo và gửi broucher về Ctr NCKH cho mẹ tham khảo số dưới, số trên k có zalo 16/3 Thôi được rồi, chị đang xem, chị đang bận nhé 4/4: KNM 7/5: gửi thêm dự án về AI cho mẹ tham khảo, gửi thêm một số giải thưởng 21/05: knm",
       "reason": ""
     },
     {
@@ -68961,8 +69474,8 @@ window.REPORT_GSJ_SALES_DATA = {
       "owner2": "",
       "stageCode": "L4",
       "stageGroup": "Đã tư vấn / đang chờ chốt",
-      "status": "L4.2 Cần trao đổi thêm với gia đình",
-      "note": "12/3 số thuê bao 14/3 máy bận k nhấc máy, gọi 2 lần liền. haizz 16/3, 17/3 có chuông nhưng không nhấc máy 26/3: Gọi chị nói con định hướng học trong nước, theo ngành gì liên quan đến toán, lý, gửi chị thông tin qua zalo đi, chị bận lắm, gửi chị dự án Teng tham khảo cho con, chị lại hỏi dự án IT gửi AI thực phẩm, chị chưa rep 4/4: KNM 7/4: Hỏi thăm chị đã xem dự án Teng em gửi chưa, chị nói đợt này con bận thi học kỳ quá, để chị trao đổi với con đã rồi chị nhắn em 8/5: Hè này con tham gia dự án thiện nguyện rồi nên là chưa sắp xêp được em ạ! có gì chị nhắn em nha",
+      "status": "L4.3 Từ chối sau tư vấn",
+      "note": "12/3 số thuê bao 14/3 máy bận k nhấc máy, gọi 2 lần liền. haizz 16/3, 17/3 có chuông nhưng không nhấc máy 26/3: Gọi chị nói con định hướng học trong nước, theo ngành gì liên quan đến toán, lý, gửi chị thông tin qua zalo đi, chị bận lắm, gửi chị dự án Teng tham khảo cho con, chị lại hỏi dự án IT gửi AI thực phẩm, chị chưa rep 4/4: KNM 7/4: Hỏi thăm chị đã xem dự án Teng em gửi chưa, chị nói đợt này con bận thi học kỳ quá, để chị trao đổi với con đã rồi chị nhắn em 8/5: Hè này con tham gia dự án thiện nguyện rồi nên là chưa sắp xêp được em ạ! có gì chị nhắn em nha 13/05: knm",
       "reason": ""
     },
     {
@@ -68978,7 +69491,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "14/3: gọi k nhấc máy 14/3Gọi được cho chị nói con chị cũng có định hướng đi du học Mỹ, chưa có định hướng nghiên cứu ngành nào, thử gửi cho chị mấy dự án cho tầm tuổi đó chị xem, đã gửi chị qua zalo tham khảo dự án AI về toán 20/3 gọi nhưng mạng yếu, k nghe rõc 24/3 Quyên gọi họ, tư vấn 1 lúc nhưng chị nói vòng vòng chắc kiểu k muốn 7/4 nhắn tin hỏi thăm chị, hè này rảnh con tham gia NCKH, chuẩn bị hồ sơ sớm cạnh tranh học bổng 7/5: chị đang xem nhé",
+      "note": "14/3: gọi k nhấc máy 14/3Gọi được cho chị nói con chị cũng có định hướng đi du học Mỹ, chưa có định hướng nghiên cứu ngành nào, thử gửi cho chị mấy dự án cho tầm tuổi đó chị xem, đã gửi chị qua zalo tham khảo dự án AI về toán 20/3 gọi nhưng mạng yếu, k nghe rõc 24/3 Quyên gọi họ, tư vấn 1 lúc nhưng chị nói vòng vòng chắc kiểu k muốn 7/4 nhắn tin hỏi thăm chị, hè này rảnh con tham gia NCKH, chuẩn bị hồ sơ sớm cạnh tranh học bổng 7/5: chị đang xem nhé 21/05: knm",
       "reason": ""
     },
     {
@@ -69071,9 +69584,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.3 Từ chối do địa lý / không tham gia offline",
+      "stageCode": "L4",
+      "stageGroup": "Đã tư vấn / đang chờ chốt",
+      "status": "L4.3 Từ chối sau tư vấn",
       "note": "14/3 con ở Lai Châu nên không thể tham gia lớp học KHTN., có giới thiệu các chương trình của GSJ nhưng chị không quan tâm",
       "reason": ""
     },
@@ -69778,7 +70291,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L4",
       "stageGroup": "Đã tư vấn / đang chờ chốt",
       "status": "L4.2 Cần trao đổi thêm với gia đình",
-      "note": "17/3 con học lớp 10 trường Kim Liên, k có định hướng đi du học, mẹ tìm hiểu trước để hè con tham gia, chị đã gửi thông tin về chương trình NCKH để mẹ xem trước, hè con tham gia được thì gửi để tài sau. 27/3 nhắn tặng chị và con 1 buổi hướng nghiệp 1-1 nhân dịp khai trương, chị chưa rep 4/4: Chị cũng chưa biêt được, phải hỏi lại con đã xem có muốn tham gia không 8/5: Gửi cho chị dự án về vật lý Teng cho mẹ tham khảo",
+      "note": "17/3 con học lớp 10 trường Kim Liên, k có định hướng đi du học, mẹ tìm hiểu trước để hè con tham gia, chị đã gửi thông tin về chương trình NCKH để mẹ xem trước, hè con tham gia được thì gửi để tài sau. 27/3 nhắn tặng chị và con 1 buổi hướng nghiệp 1-1 nhân dịp khai trương, chị chưa rep 4/4: Chị cũng chưa biêt được, phải hỏi lại con đã xem có muốn tham gia không 8/5: Gửi cho chị dự án về vật lý Teng cho mẹ tham khảo 21/5: Đã kết b ạn zalo gửi dự án teng chị tham khảo",
       "reason": ""
     },
     {
@@ -69890,7 +70403,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L4",
       "stageGroup": "Đã tư vấn / đang chờ chốt",
       "status": "L4.2 Cần trao đổi thêm với gia đình",
-      "note": "18/3 chị có con học lớp 11 chuyên KHTN, có định hướng du học Sing, muốn nghiên cứu ngành kỹ thuật - Tin, đã kết nối zalo với chị gửi chị dự án AI thực phẩm và mời chị tham gia tư vấn 1-1 Du học vs chuyên gia, chị nói để chị xem con rảnh lúc nào để họp 23/3 gọi lại cho chị, chị nói cũng chưa biết có đi du học không nên đang chưa muốn cho làm hay không, 4/4: KNM 11/4: Nhắn gửi sự kiện khai trương mời mẹ và con tham gia. 24/4: nhắn k trả lời 8/5: Gọi KNM, nhắn chưa trả lời",
+      "note": "18/3 chị có con học lớp 11 chuyên KHTN, có định hướng du học Sing, muốn nghiên cứu ngành kỹ thuật - Tin, đã kết nối zalo với chị gửi chị dự án AI thực phẩm và mời chị tham gia tư vấn 1-1 Du học vs chuyên gia, chị nói để chị xem con rảnh lúc nào để họp 23/3 gọi lại cho chị, chị nói cũng chưa biết có đi du học không nên đang chưa muốn cho làm hay không, 4/4: KNM 11/4: Nhắn gửi sự kiện khai trương mời mẹ và con tham gia. 24/4: nhắn k trả lời 8/5: Gọi KNM, nhắn chưa trả lời 20/5: KNM",
       "reason": ""
     },
     {
@@ -71234,7 +71747,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "29/3: Số này Hạnh đi chương trình trường Vinschool, mẹ chia sẻ con Định hướng học CNTT Có biết lập trình Đã từng thi KHTH nhì quốc gia Có mục tiêu du học, đang tìm hiểu Mỹ Cần tư vấn thêm về các dự án NCKH Đã gọi nhưng mẹ nói bận, kết bạn zalo mẹ chặn số lạ 30/3: Tối gọi vẫn k nhấc máy 31/3: Không nhấc máy, tối về nhắn tin chị có trả lời, gửi chị dự án AI cho mẹ tham khảo 1/4 chị thấy hay quá mà tới hè con rảnh chị sẽ cho con tham gia 11/04: Mời mẹ tham gia sự kiện khai trương",
+      "note": "29/3: Số này Hạnh đi chương trình trường Vinschool, mẹ chia sẻ con Định hướng học CNTT Có biết lập trình Đã từng thi KHTH nhì quốc gia Có mục tiêu du học, đang tìm hiểu Mỹ Cần tư vấn thêm về các dự án NCKH Đã gọi nhưng mẹ nói bận, kết bạn zalo mẹ chặn số lạ 30/3: Tối gọi vẫn k nhấc máy 31/3: Không nhấc máy, tối về nhắn tin chị có trả lời, gửi chị dự án AI cho mẹ tham khảo 1/4 chị thấy hay quá mà tới hè con rảnh chị sẽ cho con tham gia 11/04: Mời mẹ tham gia sự kiện khai trương 19/5: chị ko có nhu càu",
       "reason": ""
     },
     {
@@ -72767,9 +73280,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.3 Lead phản hồi nhưng không quan tâm",
+      "stageCode": "L4",
+      "stageGroup": "Đã tư vấn / đang chờ chốt",
+      "status": "L4.3 Từ chối sau tư vấn",
       "note": "16/4: Chị đang bận,.. tầm chiều em gọi lại cho chị nhé 16/4: C vẫn dag bận, tối nhé hoặc chị rảnh chị sẽ chủ động gọi lại 18/4: thuê bao, nhắn zalo 12/05: đã liên hệ lại nhưng chưa có nhu cầu, báo gửi thông tin qua zalo có nhu cầu sẽ chủ động liên hệ lại 15/5: đang tư vấn cho mẹ qua zalo, mẹ quan tâm ABS lớp 6",
       "reason": ""
     },
@@ -72882,7 +73395,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "UNK",
       "stageGroup": "Không rõ",
       "status": "Không rõ",
-      "note": "Số máy không liên lạc được",
+      "note": "Số máy không liên lạc được 20/5: c bảo c ko có nhu cầu",
       "reason": ""
     },
     {
@@ -72946,7 +73459,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.3 Từ chối do địa lý / không tham gia offline",
-      "note": "16/4: con lớp 7 ở Yên Nghĩa, thấy QC thì hỏi các chương trình bên em, có tư vấn NCKH Đang tư vấn thì bị ngắt máy, gọi lại không nghe, mẹ muốn tìm hiểu NCKH sớm để mai sau cho con học ngành Y, bố mẹ cũng có trong ngành",
+      "note": "16/4: con lớp 7 ở Yên Nghĩa, thấy QC thì hỏi các chương trình bên em, có tư vấn NCKH Đang tư vấn thì bị ngắt máy, gọi lại không nghe, mẹ muốn tìm hiểu NCKH sớm để mai sau cho con học ngành Y, bố mẹ cũng có trong ngành 20/5: KNM",
       "reason": ""
     },
     {
@@ -72978,7 +73491,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "16/4: Con học Cầu Giấy, học tốt toán, lý , hóa, Anh, chưa có định hướng ngành nghề cụ thể, mẹ nói nếu được HB đi Nhật thì khuyến khích con đi, con thì chưa muốn mẹ muốn con tham gia NCKH để định hướng ngành nghề, mẹ muốn gửi một số đề tài về vật lý, hóa sinh, cntt cho con chọn đã 17/4: Nhắn mẹ đã cho con xem qua đề tài chưa ạ, mẹ chưa rep 18/4: trưa cô gọi điện lại cho mẹ nhé, trưa gọi KNM 22/4: Nhắn chị xem con chọn dự án nào chưa? chị chưa trải lời",
+      "note": "16/4: Con học Cầu Giấy, học tốt toán, lý , hóa, Anh, chưa có định hướng ngành nghề cụ thể, mẹ nói nếu được HB đi Nhật thì khuyến khích con đi, con thì chưa muốn mẹ muốn con tham gia NCKH để định hướng ngành nghề, mẹ muốn gửi một số đề tài về vật lý, hóa sinh, cntt cho con chọn đã 17/4: Nhắn mẹ đã cho con xem qua đề tài chưa ạ, mẹ chưa rep 18/4: trưa cô gọi điện lại cho mẹ nhé, trưa gọi KNM 22/4: Nhắn chị xem con chọn dự án nào chưa? chị chưa trải lời 20/5: KNM, chị chưa trả lời",
       "reason": ""
     },
     {
@@ -73106,7 +73619,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "17/4 con muốn tham gia NCKH để xét tuyển cấp 3, sau này cũng có ý định đi du học ở Newzeland lớp 12 tùy tình hình chiinsh trị. Cấp 3 nếu học trong nước thì học ở Việt Đức. Con đã thi cuocj thi công nghệ trẻ chấu Á lớp 5, đã làm dự án nghiên cứu ngôn ngữ ký hiệu cho trẻ tự kỷ, con thích về máy tính, robot và Tiếng Anh. Sắp tới có đề tài cấp 2 gửi mẹ. có giới thiệu về chương trình KHTH và ABS mẹ cũng muốn tham khảo ABS, gửi thông tin cho mẹ qua zalo 20/4: nhắn hỏi thăm mẹ đã xem chưa? có thắc mắc gì không, mẹ nó con đang thi cuối kỳ, xong chị nhắn em sau nhé",
+      "note": "17/4 con muốn tham gia NCKH để xét tuyển cấp 3, sau này cũng có ý định đi du học ở Newzeland lớp 12 tùy tình hình chiinsh trị. Cấp 3 nếu học trong nước thì học ở Việt Đức. Con đã thi cuocj thi công nghệ trẻ chấu Á lớp 5, đã làm dự án nghiên cứu ngôn ngữ ký hiệu cho trẻ tự kỷ, con thích về máy tính, robot và Tiếng Anh. Sắp tới có đề tài cấp 2 gửi mẹ. có giới thiệu về chương trình KHTH và ABS mẹ cũng muốn tham khảo ABS, gửi thông tin cho mẹ qua zalo 20/4: nhắn hỏi thăm mẹ đã xem chưa? có thắc mắc gì không, mẹ nó con đang thi cuối kỳ, xong chị nhắn em sau nhé 15/5: ntin zalo c ko kban",
       "reason": ""
     },
     {
@@ -73170,7 +73683,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1. Contact đã phát sinh cuộc gọi đầu tiên",
-      "note": "17/4: chị cũng muốn tìm hiểu để sau này cho con đi Du học, nhưng chị cũng không rõ đâu, có chị nó định hướng, chị bận chút",
+      "note": "17/4: chị cũng muốn tìm hiểu để sau này cho con đi Du học, nhưng chị cũng không rõ đâu, có chị nó định hướng, chị bận chút 15/5: đã kban zalo c chưa rep",
       "reason": ""
     },
     {
@@ -73250,7 +73763,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
-      "note": "19/4: anh đang bệnh, ho lắm mai gọi lại anh nhé 20/4: KNM",
+      "note": "19/4: anh đang bệnh, ho lắm mai gọi lại anh nhé 20/4: KNM 20/5: anh là giáo viên muốn tìm hiểu để giới thiệu cho học sinh",
       "reason": ""
     },
     {
@@ -73714,7 +74227,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1. Contact đã phát sinh cuộc gọi đầu tiên",
-      "note": "22/4 knm 23/4 knm 28/4: KNM 8/5 knm 12/5: Chị đang bận, có gì liên hệ sau nhé, kết bạn zalo chặn người lạ",
+      "note": "22/4 knm 23/4 knm 28/4: KNM 8/5 knm 12/5: Chị đang bận, có gì liên hệ sau nhé, kết bạn zalo chặn người lạ 20/5: KNM",
       "reason": ""
     },
     {
@@ -73775,10 +74288,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "23/4: Con đang muốn học để sau này app vào vinUni, các trường đại hocj tại Mỹ hoặc Singapore ngành Y hoặc hóa sinh. đã tư vấn thêm về hồ sơ du học cho con. chị ưng qúa, đang hỏi cả bạn xem có tham gia cùng 28/4: nhắn hỏi lại chị đự án đã xem qua chưa? có thắc mắc gì không chị nói con, 29/4: thực ra con chị đang học lớp 8 thôi, nên chị thấy hơi nhỏ quá, nên chị sợ con không theo dudocj dự án, để chị trao đổi thêm với con",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "23/4: Con đang muốn học để sau này app vào vinUni, các trường đại hocj tại Mỹ hoặc Singapore ngành Y hoặc hóa sinh. đã tư vấn thêm về hồ sơ du học cho con. chị ưng qúa, đang hỏi cả bạn xem có tham gia cùng 28/4: nhắn hỏi lại chị đự án đã xem qua chưa? có thắc mắc gì không chị nói con, 29/4: thực ra con chị đang học lớp 8 thôi, nên chị thấy hơi nhỏ quá, nên chị sợ con không theo dudocj dự án, để chị trao đổi thêm với con 19/5: chị ko tham gia",
       "reason": ""
     },
     {
@@ -73810,7 +74323,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "23/4KNM 25/4 KNM 5/5 KNM đã nhắn tin zalo nhưng chị chặn người lạ 15/5: KNM",
+      "note": "23/4KNM 25/4 KNM 5/5 KNM đã nhắn tin zalo nhưng chị chặn người lạ 15/5: KNM 20/5: đã gửi thông tin qua zalo mà c chưa rep",
       "reason": ""
     },
     {
@@ -73839,9 +74352,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
       "note": "24/4:con học lớp 10, DGS con GPA lớp 3.93. 3.94 , SAT đợt tháng 3 vừa rồi 1540, con học 10 môn AP, thiếu NCKH, giải thưởng với bài báo, dự án cộng đồng. chị có mentor rồi. nhưng chưa làm được luôn đâu, con chị còn thi SAT, khoảng sau t háng 6 chị mới rảnh để cho bạn tham gia được ạ 15/5: chị bận lát gọi lại",
       "reason": ""
     },
@@ -73903,10 +74416,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "24/4: con sang năm lên lớp 9 rồi nên chị muốn cho con làm NCKH trước để lớp 9 con có đự án, đi thi để bổ sung hồ sơ du học, con thích KHTN về vật lý, chị bận lắm, em gủi chị qua zalo đi, đã gửi dự án TENG, gửi broucher NCKH link giải thưởng 28/4: nhắn hỏi chị về dự án chị còn thắc mắc gì nữa không, chị đang cân nhắc 3/5: Gọi KNM 6/5: Gọi KNM, nhắn chị đang cân nhắc vì chị thấy dự án hơi đắt so với nhà chị 8/5: Bạn nhà chị chắc sang năm mới cho làm em ạ!",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "24/4: con sang năm lên lớp 9 rồi nên chị muốn cho con làm NCKH trước để lớp 9 con có đự án, đi thi để bổ sung hồ sơ du học, con thích KHTN về vật lý, chị bận lắm, em gủi chị qua zalo đi, đã gửi dự án TENG, gửi broucher NCKH link giải thưởng 28/4: nhắn hỏi chị về dự án chị còn thắc mắc gì nữa không, chị đang cân nhắc 3/5: Gọi KNM 6/5: Gọi KNM, nhắn chị đang cân nhắc vì chị thấy dự án hơi đắt so với nhà chị 8/5: Bạn nhà chị chắc sang năm mới cho làm em ạ! 20/5: chị ko làm em ạ",
       "reason": ""
     },
     {
@@ -73985,8 +74498,8 @@ window.REPORT_GSJ_SALES_DATA = {
       "owner2": "",
       "stageCode": "L3",
       "stageGroup": "Hẹn lịch / trải nghiệm",
-      "status": "L3.2. Đồng ý tìm hiểu nhưng chưa xếp được lịch",
-      "note": "24/4: COn học lớp 10 Thăng Long Hà Noioij, con định đi du học Úc ngành Y sinh hoặc vật lý. chị cũng liên hệ với bên em trước rồi, có đề tài gì thì nhắn chị qua zalo nhé để nhà chị lựa chọn 28/4: nhắn hỏi thăm chị xem dự án con đã xem qua chưa?con có đồng ý không, đợic hị trẳ lời 29/4: Nhà chị đang đi Úc, có gì chị nhắn em sau nhé 5/5: gọi thuê bao (khả năng vẫn ở nước ngoài, nhắn tin chị xem đã xem dự án chưa? 8/5: Gọi số thuê bao 12/5: Nhà chị cũng phải đấu tranh lắm, hè này đang tham gia học IELTS và học thêm lý, tháng sau em điện lại cho chị nhé",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "24/4: COn học lớp 10 Thăng Long Hà Noioij, con định đi du học Úc ngành Y sinh hoặc vật lý. chị cũng liên hệ với bên em trước rồi, có đề tài gì thì nhắn chị qua zalo nhé để nhà chị lựa chọn 28/4: nhắn hỏi thăm chị xem dự án con đã xem qua chưa?con có đồng ý không, đợic hị trẳ lời 29/4: Nhà chị đang đi Úc, có gì chị nhắn em sau nhé 5/5: gọi thuê bao (khả năng vẫn ở nước ngoài, nhắn tin chị xem đã xem dự án chưa? 8/5: Gọi số thuê bao 12/5: Nhà chị cũng phải đấu tranh lắm, hè này đang tham gia học IELTS và học thêm lý, tháng sau em điện lại cho chị nhé 21/5: chị báo con chị ko xếp dc lịch học",
       "reason": ""
     },
     {
@@ -74175,10 +74688,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "28/4: con chị mới học lớp 7 lên lớp 8 thôi, nhưng đạt một số giải về khoa học kỹ thuật ở trường như invovation, lâp trình, chế tạo, chi muốn con làm NCKH để đẩy bạn ấy lên trình và có các thầy cô hướng dẫn được con chứ mẹ không có chuyên môn, đã gửi mẹ dự án về AI cho mẹ tham khảo 29/4: Nhắn tin hỏi han chị về chương trình gửi con đã xem chư, chị nói ra lễ chị trả lời em 3/5: chị bận quá chưa trao đổi được với con 6/5: Chị bận quá, để chị hỏi con rồi báo em sau nhé 8/5: gọi KNM, nhắn tin chị đã xem dự án em gửi chị chưa 12/5: Chị chắc lớp 9 chị cho con tham gia",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "28/4: con chị mới học lớp 7 lên lớp 8 thôi, nhưng đạt một số giải về khoa học kỹ thuật ở trường như invovation, lâp trình, chế tạo, chi muốn con làm NCKH để đẩy bạn ấy lên trình và có các thầy cô hướng dẫn được con chứ mẹ không có chuyên môn, đã gửi mẹ dự án về AI cho mẹ tham khảo 29/4: Nhắn tin hỏi han chị về chương trình gửi con đã xem chư, chị nói ra lễ chị trả lời em 3/5: chị bận quá chưa trao đổi được với con 6/5: Chị bận quá, để chị hỏi con rồi báo em sau nhé 8/5: gọi KNM, nhắn tin chị đã xem dự án em gửi chị chưa 12/5: Chị chắc lớp 9 chị cho con tham gia 20/5: chị ko có nhu cầu em ạ",
       "reason": ""
     },
     {
@@ -74207,10 +74720,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "27/4: con học chuyên nguyễn Huệ, làm NCKH bổ sung hồ sơ nộp vào các trường Y ở VN hoặc là ngành hóa sinh ở Singapore, chị cũng đã tham khảo tư vấn ở 1 số nơi và giờ đi tìm đề tài cho con làm. đã gửi chị dự án cho chị và con tham khảo 29/4: chị đang đi đường, có gì chị trao đổi lại sau nhé! 3/5: Chị đang đi công tác chưa trao đổi được với con 6/5: Con chị bận ôn thi Quốc gia đến tháng 10 mới xong, có tư vấn con sắp xếp thời gian để tham gia vfi mục tiêu gia đình app Sing thì sẽ không kịp , chị nói để cuối tuần chị đi công tác về sẽ trao đổi lại với con nhé! 12/5: KNM 15/5: KNM",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "27/4: con học chuyên nguyễn Huệ, làm NCKH bổ sung hồ sơ nộp vào các trường Y ở VN hoặc là ngành hóa sinh ở Singapore, chị cũng đã tham khảo tư vấn ở 1 số nơi và giờ đi tìm đề tài cho con làm. đã gửi chị dự án cho chị và con tham khảo 29/4: chị đang đi đường, có gì chị trao đổi lại sau nhé! 3/5: Chị đang đi công tác chưa trao đổi được với con 6/5: Con chị bận ôn thi Quốc gia đến tháng 10 mới xong, có tư vấn con sắp xếp thời gian để tham gia vfi mục tiêu gia đình app Sing thì sẽ không kịp , chị nói để cuối tuần chị đi công tác về sẽ trao đổi lại với con nhé! 12/5: KNM 15/5: KNM 21/5: c đã cho con tham gia bên khác rồi nhé",
       "reason": ""
     },
     {
@@ -74239,10 +74752,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L4",
-      "stageGroup": "Đã tư vấn / đang chờ chốt",
-      "status": "L4.2 Cần trao đổi thêm với gia đình",
-      "note": "28/4: con lên lớp 9. muốn tìm hiểu về ngành y sinh, định app Mỹ ngành Y hoặc có thể là Anh, Úc... nhà chị thì có mẹ chị làm về ngành Y thôi, còn con thích em ạ. Gửi cho chị dứ án về Mayonnese cho mẹ con chị tham khảo 29/4: Nhắn hỏi chị đã xem dự án em gửi chị chưa, gửi thêm một số thông tin giải thưởng 3/5: KNM 6/5: chị nằm viện chưa trao đổi được với con, để chiều tối chị về chị trao đổi rồi chị trả lời em nhé. 8/5; Chị đang họp, lát em gọi lại cho chị nhé 11/5: Để chị trao đổi lại với ocn 15/5: KNM",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "28/4: con lên lớp 9. muốn tìm hiểu về ngành y sinh, định app Mỹ ngành Y hoặc có thể là Anh, Úc... nhà chị thì có mẹ chị làm về ngành Y thôi, còn con thích em ạ. Gửi cho chị dứ án về Mayonnese cho mẹ con chị tham khảo 29/4: Nhắn hỏi chị đã xem dự án em gửi chị chưa, gửi thêm một số thông tin giải thưởng 3/5: KNM 6/5: chị nằm viện chưa trao đổi được với con, để chiều tối chị về chị trao đổi rồi chị trả lời em nhé. 8/5; Chị đang họp, lát em gọi lại cho chị nhé 11/5: Để chị trao đổi lại với ocn 15/5: KNM 20/5: ko có nhu cầu nữa",
       "reason": ""
     },
     {
@@ -74530,7 +75043,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "02/05 con học chương trình của Nhật, vừa mới chuyển sang học hệ Cam, con học Việt Úc. sn 2014 mẹ muốn tìm hiểu cuộc thi để con trải nghiêm và tăng kỹ năng và làm hồ sơ. Con có mục tiêu du học mỹ Đã tư vấn về thông tin cuộc thi, và thông tin ghép đội, khoá đào tạo, mẹ ok nhưng đang kỳ kèo học phí, báo ưu đãi giảm 22tr r đang đòi 20tr",
+      "note": "02/05 con học chương trình của Nhật, vừa mới chuyển sang học hệ Cam, con học Việt Úc. sn 2014 mẹ muốn tìm hiểu cuộc thi để con trải nghiêm và tăng kỹ năng và làm hồ sơ. Con có mục tiêu du học mỹ Đã tư vấn về thông tin cuộc thi, và thông tin ghép đội, khoá đào tạo, mẹ ok nhưng đang kỳ kèo học phí, báo ưu đãi giảm 22tr r đang đòi 20tr 20/5: mẹ bảo gửi lại mẹ xem mà chưa kban zalo",
       "reason": ""
     },
     {
@@ -74546,7 +75059,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "1/5: KNMxx 5/5: con học lớp 11 trường công ở HN thôi em ạ, chị muốn cho con trải nghiệm trước về ngành hoá sinh, hoặc dược vì con ddang mục tiêu thi y trong nước, con ko có đi nc ngài, gửi mẹ dự án mayonare để mẹ cân nhắc 8/5: KNM, nhắn lại zalo",
+      "note": "1/5: KNMxx 5/5: con học lớp 11 trường công ở HN thôi em ạ, chị muốn cho con trải nghiệm trước về ngành hoá sinh, hoặc dược vì con ddang mục tiêu thi y trong nước, con ko có đi nc ngài, gửi mẹ dự án mayonare để mẹ cân nhắc 8/5: KNM, nhắn lại zalo 20/5: KNM",
       "reason": ""
     },
     {
@@ -74559,10 +75072,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "02/05 Gọi KNM, nhắn tin chưa kết bạn, zalo đang chặn người lạ 4/5: Tầm 4h gọi lại cho chị nhé 5/5: chị bận quá, kết bạn zalo tối gọi lại Con chị học trường công thôi, thấy hay hay, con học tự nhiên cũng được, xã hội cũng được chưa định hướng gì cả chị hỏi thôi, để chị xem như nào 8/5: để con lớn hơn chút rồi chị cho làm nhé 15/5: KNm",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "02/05 Gọi KNM, nhắn tin chưa kết bạn, zalo đang chặn người lạ 4/5: Tầm 4h gọi lại cho chị nhé 5/5: chị bận quá, kết bạn zalo tối gọi lại Con chị học trường công thôi, thấy hay hay, con học tự nhiên cũng được, xã hội cũng được chưa định hướng gì cả chị hỏi thôi, để chị xem như nào 8/5: để con lớn hơn chút rồi chị cho làm nhé 15/5: KNm 20/5: KNM 21/5: học phí cao chị ko tham gia nhé",
       "reason": ""
     },
     {
@@ -74770,7 +75283,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "4/5: con muốn tham gia Data science, đang học song bằng A-level đến tháng 11 là thi xong 4 môn AS. A2, con định du học Úc nên muốn làm dự án về AI, chị có 1 bạn lớn cũng đi Úc rồi, bên Đức Anh hỗ trợ chỉ nộp hồ sơ thôi, không có chiến lược gì cả, kết bạn zalo gửi dư án AI cho chị 6/5: nhắn hỏi chị, chị đang hỏi có tham gia cuộc thi KHKT của bộ được không. 8/5: Bạn nhà mình đang bận ôn thi chưa làm được tàm 20/5 con thi xong thì chị báo sau nhé",
+      "note": "4/5: con muốn tham gia Data science, đang học song bằng A-level đến tháng 11 là thi xong 4 môn AS. A2, con định du học Úc nên muốn làm dự án về AI, chị có 1 bạn lớn cũng đi Úc rồi, bên Đức Anh hỗ trợ chỉ nộp hồ sơ thôi, không có chiến lược gì cả, kết bạn zalo gửi dư án AI cho chị 6/5: nhắn hỏi chị, chị đang hỏi có tham gia cuộc thi KHKT của bộ được không. 8/5: Bạn nhà mình đang bận ôn thi chưa làm được tàm 20/5 con thi xong thì chị báo sau nhé 20/5: chị đang xem",
       "reason": ""
     },
     {
@@ -74847,9 +75360,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1. Contact đã phát sinh cuộc gọi đầu tiên",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
       "note": "4/5: chị đang bận nhắn zalo nhé, đã nhắn tin khai thác thêm thông tin 5/5: Đã nhắn tin cho chị, con định hướng học về kinh doanh, chắc sẽ app VinUni, bên chị tự nộp hồ sơ, gửi chị dự án BA local 6/5: gọi chị xem dự án chị xem qua chưa. giới thiệu con tham gia chương trinfhh ABS, gửi cho mẹ xem 8/5 mẹ cũng chưa chọn 12/5: Nhắn chị có cho con tham gia ABS không 15/5: Chị báo ko tham gia",
       "reason": ""
     },
@@ -74978,7 +75491,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "4/5 bạn này học lớp 10 ở ngoại tỉnh, mẹ đang tìm hiểu về dự án AI cho con tham gia, con chưa biết có đi du học hay không, cứ trải nghiệm đã. đã gửi chị qua zalo chương trình NCKH, dự án AI về suy thận chị htam khảo. 5/5: Nhắn tin chị xem dự án chưa, chị chưa rep 7/5: chị đang đi ăn cỗ, gọi lại sau nhé 9/5: Hết kỳ thi vào 10 chị mới cho con tham gia được nhé,",
+      "note": "4/5 bạn này học lớp 10 ở ngoại tỉnh, mẹ đang tìm hiểu về dự án AI cho con tham gia, con chưa biết có đi du học hay không, cứ trải nghiệm đã. đã gửi chị qua zalo chương trình NCKH, dự án AI về suy thận chị htam khảo. 5/5: Nhắn tin chị xem dự án chưa, chị chưa rep 7/5: chị đang đi ăn cỗ, gọi lại sau nhé 9/5: Hết kỳ thi vào 10 chị mới cho con tham gia được nhé, 21/5: đã gửi tn zalo chị chưa rep",
       "reason": ""
     },
     {
@@ -75138,7 +75651,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "6/5: con học lớp 10 Newton, định hướng ngành kinh tế tài chính, có ý định đi du học Mỹ, con đang học và thi IE, SAT, chưa cò gì, điểm con cũng mức 8-9.0, đã kết bạn zalo với chị gửi dự án về BA local brand cho con tham khảo 7/5: Nhắn chị đã xem dự án em gửi chưa, có cần thêm thông tin gì khong 8/5 Lịch hè của con bận quá chị chưa sắp xếp được thời gian 15/5: mẹ bảo gửi lại thông tin cho mẹ để mẹ tham khảo lại",
+      "note": "6/5: con học lớp 10 Newton, định hướng ngành kinh tế tài chính, có ý định đi du học Mỹ, con đang học và thi IE, SAT, chưa cò gì, điểm con cũng mức 8-9.0, đã kết bạn zalo với chị gửi dự án về BA local brand cho con tham khảo 7/5: Nhắn chị đã xem dự án em gửi chưa, có cần thêm thông tin gì khong 8/5 Lịch hè của con bận quá chị chưa sắp xếp được thời gian 15/5: mẹ bảo gửi lại thông tin cho mẹ để mẹ tham khảo lại 21/5: con đã tham gia dự án khác",
       "reason": ""
     },
     {
@@ -75170,7 +75683,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "7/5: Con học lớp 9, có định hướng du học Mỹ về kinh doanh để kế thừa thương hiệu thời trang của gia đình, bố mẹ học luật nhưng không theo ngành,có truyền thống luật từ đời ông, bố mẹ làm kinh doanh thời trang vest tiêu chuẩn châu Âu, con có năng khiếu thiết kế, nắm bắt được quy trình sản xuất sản phẩm theo tiêu chuẩn khắt khe. Đã tư vấn và gửi dự án BA local brand cho mẹ tham khảo 8/5: KNM 9/5: KNM, nhắn tin zalo hỏi chị chưa rep 11/5: Chị đang trong cuộc họp, chốc nữa chị gọi nhé 15/5: Hẹn 8r sáng 16/5 gọi lại",
+      "note": "7/5: Con học lớp 9, có định hướng du học Mỹ về kinh doanh để kế thừa thương hiệu thời trang của gia đình, bố mẹ học luật nhưng không theo ngành,có truyền thống luật từ đời ông, bố mẹ làm kinh doanh thời trang vest tiêu chuẩn châu Âu, con có năng khiếu thiết kế, nắm bắt được quy trình sản xuất sản phẩm theo tiêu chuẩn khắt khe. Đã tư vấn và gửi dự án BA local brand cho mẹ tham khảo 8/5: KNM 9/5: KNM, nhắn tin zalo hỏi chị chưa rep 11/5: Chị đang trong cuộc họp, chốc nữa chị gọi nhé 15/5: Hẹn 8r sáng 16/5 gọi lại 20/5: gọi KNM",
       "reason": ""
     },
     {
@@ -75247,10 +75760,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hạnh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "học lớp 11, Ninh Bình, du học kỹ thuật hoá, Hồng Kông, Hàn. Học trường Hoa Lư A, nhà thành phố luôn, có qua mentor du học định hướng và viết luận. Bạn có thể lên HN học thực nghiệm. Đã kết bạn zalo gửi CT",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "học lớp 11, Ninh Bình, du học kỹ thuật hoá, Hồng Kông, Hàn. Học trường Hoa Lư A, nhà thành phố luôn, có qua mentor du học định hướng và viết luận. Bạn có thể lên HN học thực nghiệm. Đã kết bạn zalo gửi CT E có đang làm 1 bài báo rùi í ạ nên mẹ e có vẻ khong muốn e tham gia thêm nữa 😭",
       "reason": ""
     },
     {
@@ -75359,9 +75872,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
+      "stageCode": "L4",
+      "stageGroup": "Đã tư vấn / đang chờ chốt",
+      "status": "L4.3 Từ chối sau tư vấn",
       "note": "8/6: c bận 12h trưa gọi lại c 12/05: đã kết nối lại với PH và gửi thông tin qua ZALO, hsinh trong HCM (đã gửi thông tin nhưng không phản hồi) 15/05: đã liên hệ remind PH Từ chối, con ở HCM không tham gia được",
       "reason": ""
     },
@@ -75410,7 +75923,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "knm số này của Ánh chia cho hôm 11/5 11/5: KNM 12/5: số thuê bao, zalo chặn người ạ",
+      "note": "knm số này của Ánh chia cho hôm 11/5 11/5: KNM 12/5: số thuê bao, zalo chặn người ạ 20/5: KNM",
       "reason": ""
     },
     {
@@ -75487,10 +76000,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "người dùng bận Số này được chia từ Ánh từ ngày 11/5 11/5: Con là Nhiên học Bùi Thị Xuân ở HCM, con định apply các nước châu Âu hoặc Trung Quốc, GPA lớp 9 là 9.1, kỳ 1 năm 10 là 8.9, IE, SAT chưa thi, con có tham gia leader của 1 dự án phi lợi nhuận, Nghiên cứu khoa học về hóa sinh, y sinh, nếu owrVN thì sẽ thi Y Đa khoa, y học cổ truyền đi TQ, còn CNSH thì đi châu Âu,đã gửi dự án về hóa sinh lipid máu cho con tham khảo 12/5: Hỏi thăm xem con đã xem dự án chưa, có gì thắc mắc không 15/5: KNM",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "người dùng bận Số này được chia từ Ánh từ ngày 11/5 11/5: Con là Nhiên học Bùi Thị Xuân ở HCM, con định apply các nước châu Âu hoặc Trung Quốc, GPA lớp 9 là 9.1, kỳ 1 năm 10 là 8.9, IE, SAT chưa thi, con có tham gia leader của 1 dự án phi lợi nhuận, Nghiên cứu khoa học về hóa sinh, y sinh, nếu owrVN thì sẽ thi Y Đa khoa, y học cổ truyền đi TQ, còn CNSH thì đi châu Âu,đã gửi dự án về hóa sinh lipid máu cho con tham khảo 12/5: Hỏi thăm xem con đã xem dự án chưa, có gì thắc mắc không 15/5: KNM 21/5: đã xem nhưng ko còn nhu cầu",
       "reason": ""
     },
     {
@@ -75519,10 +76032,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
-      "note": "con học ở Bắc Giang, thích công nghệ, cũng tham gia cuộc thi KHKT của Tỉnh, nên chị muốn tìm hiểu để con tham gia dự án NCKH xem thế nào. Gia đình không có điều kiện cho con đi du học, chỉ học trong nước trường bình thường thôi. Cũng tư vấn dự án giúp định hướng nghề nghiệp cho con Đã gửi chương trình AI thận cho mẹ tham khảo 11/5: Con đang thi học kỳ nên là khi nào xong chị báo em nhé, không cần gọi lại đâu.",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "con học ở Bắc Giang, thích công nghệ, cũng tham gia cuộc thi KHKT của Tỉnh, nên chị muốn tìm hiểu để con tham gia dự án NCKH xem thế nào. Gia đình không có điều kiện cho con đi du học, chỉ học trong nước trường bình thường thôi. Cũng tư vấn dự án giúp định hướng nghề nghiệp cho con Đã gửi chương trình AI thận cho mẹ tham khảo 11/5: Con đang thi học kỳ nên là khi nào xong chị báo em nhé, không cần gọi lại đâu. 20/5: knm",
       "reason": ""
     },
     {
@@ -75554,7 +76067,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.3 Lead phản hồi nhưng không quan tâm",
-      "note": "8/5 KNM 9/5: KNM đã kết bạn zalo giới thiệu, chị chưa rep 11/5: GỌi KNM 12/5: hỏi một số thông tin của con học trường nào, định hướng ngành gì thì nói khó nghe,kiểu em tư vấn chị hay chị tư vấn em, thôi chị biết rồi, để có gì chị báo 15/5: khách từ chối, ko có nhu cầu",
+      "note": "8/5 KNM 9/5: KNM đã kết bạn zalo giới thiệu, chị chưa rep 11/5: GỌi KNM 12/5: hỏi một số thông tin của con học trường nào, định hướng ngành gì thì nói khó nghe,kiểu em tư vấn chị hay chị tư vấn em, thôi chị biết rồi, để có gì chị báo 15/5: khách từ chối, ko có nhu cầu 20/5: KNM",
       "reason": ""
     },
     {
@@ -75650,7 +76163,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
-      "note": "9/5: chị đang bận em nhé, tối em gọi chị hoặc khi khác nhé 9/5: KNM, nhắn zalo 10/5: KNM",
+      "note": "9/5: chị đang bận em nhé, tối em gọi chị hoặc khi khác nhé 9/5: KNM, nhắn zalo 10/5: KNM 21/5: KNM",
       "reason": ""
     },
     {
@@ -75777,7 +76290,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "owner2": "",
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.2 Không liên lạc được / máy bận",
+      "status": "L1.3 Lead phản hồi nhưng không quan tâm",
       "note": "10/5: knm 13/5: bố báo có cô liên hệ rồi, tắt máy",
       "reason": ""
     },
@@ -75791,9 +76304,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.2 Không liên lạc được / máy bận",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
       "note": "10/5: máy bận 11/5: KNM 12/5; KNM, đã nhắn tin zalo, chưa rep 15/5: KNM",
       "reason": ""
     },
@@ -75810,7 +76323,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "10/5: thuê bao 11/5: KNM 12/5: KNM, đã nhắn zalo chưa roe 15/5: KNM",
+      "note": "10/5: thuê bao 11/5: KNM 12/5: KNM, đã nhắn zalo chưa roe 15/5: KNM 20/5: KNm",
       "reason": ""
     },
     {
@@ -75858,7 +76371,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "11/5: Số thuê bao 12/5: sô thuê bao, nhắn tin zalo chưa rep 15/5: số thuê bao",
+      "note": "11/5: Số thuê bao 12/5: sô thuê bao, nhắn tin zalo chưa rep 15/5: số thuê bao 20/5: thuê bao",
       "reason": ""
     },
     {
@@ -75887,10 +76400,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
-      "note": "11/5: Chị đang bận họp, gọi lại sau nhé 12/5; số máy không liên lạc được, đã nhắn tin zalo hỏi thêm mẹ, mẹ chưa rep",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "11/5: Chị đang bận họp, gọi lại sau nhé 12/5; số máy không liên lạc được, đã nhắn tin zalo hỏi thêm mẹ, mẹ chưa rep 22/5: thuê bao",
       "reason": ""
     },
     {
@@ -75935,10 +76448,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
-      "note": "11/5: Chị đang bận dạy, gọi lại sau 12/05: 10h - người dùng bận 15/05: knm - đã nhắn ZL",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.1 Sai số / sai đối tượng",
+      "note": "11/5: Chị đang bận dạy, gọi lại sau 12/05: 10h - người dùng bận 15/05: knm - đã nhắn ZL nhưng không phản hồi Con lớp 5 đã chuyển qua cnv",
       "reason": ""
     },
     {
@@ -76578,7 +77091,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "C2",
       "stageGroup": "Khác",
       "status": "C2. Lượt truy cập link (CTR)",
-      "note": "knm 12/5: gọi KNM, kết bạn zalo nhưng chưa rep 13/5: knm 145: knm",
+      "note": "knm 12/5: gọi KNM, kết bạn zalo nhưng chưa rep 13/5: knm 145: knm 22/5: KNM",
       "reason": ""
     },
     {
@@ -76607,9 +77120,9 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Webinar",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.2 Không liên lạc được / máy bận",
+      "stageCode": "C4",
+      "stageGroup": "Trùng số",
+      "status": "C4 Trùng số",
       "note": "12/05: sáng gọi knm - chiều thuê bao 15/05: knm",
       "reason": ""
     },
@@ -76719,10 +77232,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "NCKH",
       "owner": "Hạnh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "12/5/2026 KNM, kết nối zalo Số học sinh, học sinh lớp 10, Dạ trg THPT Đinh Thiện Lý, HCM, định hướng theo kinh tế, có mục tiêu đi du học, Úc hoặc các nước châu âu đã gửi dự án của cô vân hà, hẹn trao đổi lại với bố mẹ con có hỏi về suất ưu đãi đến 15/05 hết hạn đã báo 40tr giảm 30% còn 32tr đang hỏi học phí có trả theo tháng được không, đã tư vấn về phương án quẹt thẻ tín dụng trả góp 13/05 Nhma chắc khoảng ngày 14 15 ms báo lại đc ạ, bố mẹ đang cân nhắc",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "12/5/2026 KNM, kết nối zalo Số học sinh, học sinh lớp 10, Dạ trg THPT Đinh Thiện Lý, HCM, định hướng theo kinh tế, có mục tiêu đi du học, Úc hoặc các nước châu âu đã gửi dự án của cô vân hà, hẹn trao đổi lại với bố mẹ con có hỏi về suất ưu đãi đến 15/05 hết hạn đã báo 40tr giảm 30% còn 32tr đang hỏi học phí có trả theo tháng được không, đã tư vấn về phương án quẹt thẻ tín dụng trả góp 13/05 Nhma chắc khoảng ngày 14 15 ms báo lại đc ạ, bố mẹ đang cân nhắc Bố mẹ không cho tham gia",
       "reason": ""
     },
     {
@@ -76733,12 +77246,12 @@ window.REPORT_GSJ_SALES_DATA = {
       "phone": "0912433446",
       "product": "Không rõ",
       "source": "NCKH",
-      "owner": "Hạnh",
+      "owner": "Hiền",
       "owner2": "",
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "12/5 knm l1, KNM l2 13/05 KNM",
+      "note": "12/5 knm l1, KNM l2 13/05 KNM 21/05: knm",
       "reason": ""
     },
     {
@@ -76786,7 +77299,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "12/05: thuê bao 13/05: thuê bao 15/05: thuê bao",
+      "note": "12/05: thuê bao 13/05: thuê bao 15/05: thuê bao 20/05: gọi thấy báo sai số nhưng tìm ra zalo, có nhắn zalo nhưng không phản hồi",
       "reason": ""
     },
     {
@@ -76799,10 +77312,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "NCKH",
       "owner": "Hạnh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "12/05 con học lớp 10 trường quốc tế nhật bản, ngành sinh học, mục tiêu du học nhẩ bản, mẹ chưa tìm hiểu kỹ về hồ sơ du học. đã tư vấn mẹ nắm được về chương trình, Con học lớp 10 và quan tâm ngành sinh học ( tế bào học, đi truyền học, vi sinh vật...) 13/05 gửi thêm đề tài 101về hoá sinh để mẹ trao đổi với con",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "12/05 con học lớp 10 trường quốc tế nhật bản, ngành sinh học, mục tiêu du học nhẩ bản, mẹ chưa tìm hiểu kỹ về hồ sơ du học. đã tư vấn mẹ nắm được về chương trình, Con học lớp 10 và quan tâm ngành sinh học ( tế bào học, đi truyền học, vi sinh vật...) 13/05 gửi thêm đề tài 101về hoá sinh để mẹ trao đổi với con Vâng cô ơi, c định nhắn lại cô, hqua hỏi lại bố bạn để xem lại yêu cầu những trường bạn định apply, thì các trg bên đó yêu cầu đầu tiên là bài thi các môn vào trg fai đạt kq tốt trước cô ạ, mà hiện giờ b í đang rất lẹt đẹt. Họ lại ko nhắc j đến dự án trong yc đầu vào. Nên đợt này c định cho b ý ôn thi cho xong mấy cái cc ngoại ngữ trc. Xong nếu con sx đc thời gian, đảm bảo kqua các môn ở trg ổn thì con mới tham gia các nghcuu cô ạ. Nên nếu lúc nào tham gia đc thì c sẽ chủ động LH cô nhé.",
       "reason": ""
     },
     {
@@ -76850,7 +77363,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "13/05: 10h30 - knm / 14h - gọi lại knm 14/5: 15h đã gọi lại kmn 15/05: knm 19/05: knm",
+      "note": "13/05: 10h30 - knm / 14h - gọi lại knm 14/5: 15h đã gọi lại kmn 15/05: knm 19/05: knm 20/05: knm",
       "reason": ""
     },
     {
@@ -76879,10 +77392,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "NCKH",
       "owner": "Ánh",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "13/5: KNM",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
+      "note": "13/5: KNM 21/5: đang bận",
       "reason": ""
     },
     {
@@ -76930,7 +77443,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "14/05: 10h12 - knm / 15h knm 15/05: knm 20/05: knm",
+      "note": "14/05: 10h12 - knm / 15h knm 15/05: knm 20/05: sáng chiều gọi đều knm",
       "reason": ""
     },
     {
@@ -77023,10 +77536,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Ánh",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "15/5: KNM",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "15/5: KNM 21/5: con chị lớp 5 tìm hiểu abs, chị này bảo có phải bên em liên kết CNvision ko, thê thì thôi em ạ chị ko tham gia nhé",
       "reason": ""
     },
     {
@@ -77346,7 +77859,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77378,7 +77891,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77410,7 +77923,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77442,7 +77955,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77458,7 +77971,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77490,7 +78003,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.3 Lead phản hồi nhưng không quan tâm",
-      "note": "",
+      "note": "17/05: đã liên hệ gửi thông tin tham gia qua zalo, remind tham gia webinar nhưng PH không phản hồi",
       "reason": ""
     },
     {
@@ -77506,7 +78019,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77522,7 +78035,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "",
+      "note": "17/05: knm",
       "reason": ""
     },
     {
@@ -77659,14 +78172,14 @@ window.REPORT_GSJ_SALES_DATA = {
       "monthLabel": "THÁNG 5",
       "contactName": "Minh Khôi",
       "phone": "0917918886",
-      "product": "NCKH",
+      "product": "KHTH",
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
       "stageCode": "L4",
       "stageGroup": "Đã tư vấn / đang chờ chốt",
-      "status": "L4.2 Cần trao đổi thêm với gia đình",
-      "note": "19/5: KNM L1 19/5: tối gọi chị bảo muốn tham khảo về KHTH cho con. đã gửi cho chị KHTH chị bảo sẽ tham khảo",
+      "status": "L4. Học viên đã hoàn thành học thử/ đã tham gia hướng nghiệp/ được tư vấn, đang chờ chốt",
+      "note": "19/5: KNM L1 19/5: tối gọi chị bảo muốn tham khảo về KHTH cho con. đã gửi cho chị KHTH chị bảo sẽ tham khảo 20/5: đã gửi lịch học mời mẹ qua nhưng mẹ chưa phản hồi 21/5: chị đã hẹn lịch qua học thử 23/5: mẹ đã cho con qua học thử",
       "reason": ""
     },
     {
@@ -77681,8 +78194,8 @@ window.REPORT_GSJ_SALES_DATA = {
       "owner2": "",
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
-      "note": "19/5: gọi lên chị này cứ hỏi cái gì, bên em học là có thi ko, sau bảo ui chị đang bận để lúc khác chị nói chuyện nhé, xin kết bạn để giữ liên lạc",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "19/5: gọi lên chị này cứ hỏi cái gì, bên em học là có thi ko, sau bảo ui chị đang bận để lúc khác chị nói chuyện nhé, xin kết bạn để giữ liên lạc 22/5: con trai năm nay lên lớp 11 học chuyên tin KHTN, con định du học ngành KHMT, chị cũng đang tim hiểu các nước xem thế nào, con cung muốn sau khi tham gia nckh có thể tham gia cuộc thi thêm vào hồ sơ, gửi mẹ dự án AI thầy trí cho mẹ cân nhắc",
       "reason": ""
     },
     {
@@ -77695,10 +78208,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L1",
-      "stageGroup": "Không kết nối / không quan tâm",
-      "status": "L1.1 Sai số / sai đối tượng",
-      "note": "19/5: KNM L2 20/5: Đã gọi lại anh bảo nhầm rồi em ơi",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "số học sinh, chỉ có nhu cầu tìm hiểu. ko có tiền làm",
       "reason": ""
     },
     {
@@ -77727,10 +78240,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "UNK",
-      "stageGroup": "Không rõ",
-      "status": "Không rõ",
-      "note": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "20/05: knm - search zalo là số học sinh",
       "reason": ""
     },
     {
@@ -77762,7 +78275,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L2",
       "stageGroup": "Qualified / tìm hiểu",
       "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "20/5: Bạn lớp 10, định hướng ngành CN, AI. đang chờ kết bạn zalo để gửi thông tin. Mẹ kĩ tính, không thích chia sẻ thông tin cá nhân, con đang có thêm bạn bè để rủ cùng, có mục tiêu du học",
+      "note": "20/5: Bạn lớp 10, định hướng ngành CN, AI. đang chờ kết bạn zalo để gửi thông tin. Mẹ kĩ tính, không thích chia sẻ thông tin cá nhân, con đang có thêm bạn bè để rủ cùng, có mục tiêu du học 21/5: Khach tắt máy",
       "reason": ""
     },
     {
@@ -77791,10 +78304,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Hiền",
       "owner2": "",
-      "stageCode": "UNK",
-      "stageGroup": "Không rõ",
-      "status": "Không rõ",
-      "note": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "20/05: đã gửi thông tin qua zalo, con quan tâm về AI đã gửi đề tài thầy Trí nhưng chưa phản hồi lại thêm",
       "reason": ""
     },
     {
@@ -77826,7 +78339,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.1 Sai số / sai đối tượng",
-      "note": "20/5: con lớp 4 ở HCM",
+      "note": "20/5: con lớp 4 ở HCM 23/5: mẹ phản hồi đã cho con thi trong này",
       "reason": ""
     },
     {
@@ -77837,12 +78350,12 @@ window.REPORT_GSJ_SALES_DATA = {
       "phone": "0983930434",
       "product": "NCKH",
       "source": "Không rõ",
-      "owner": "Hạnh",
+      "owner": "Hiền",
       "owner2": "",
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "18/05 KNM l1, kế nối zalo",
+      "note": "18/05 KNM 20/5: đã tư vấn kết nối qua zalo tư vấn sắp xếp buổi hướng nghiệp với cô Nga trước nhưng chưa thấy phản hồi 21/05: đã gọi lại báo tối trao đổi lại với con xong sẽ nhắn lại sau",
       "reason": ""
     },
     {
@@ -77906,7 +78419,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "19/05: knm 20/05: knm",
+      "note": "19/05: knm 20/05: knm 21/05: knm - đã nhắn tin qua imess và zalo nhưng chưa phản hồi",
       "reason": ""
     },
     {
@@ -78002,12 +78515,12 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "20/05: knm",
+      "note": "20/05: knm 21/05: knm - đã nhắn check máy qua imess",
       "reason": ""
     },
     {
       "year": "2026",
-      "date": "19/05/2026",
+      "date": "",
       "monthLabel": "THÁNG 5",
       "contactName": "Dịch",
       "phone": "0387413793",
@@ -78018,7 +78531,7 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageCode": "L1",
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1.2 Không liên lạc được / máy bận",
-      "note": "20/5: knm",
+      "note": "20/5: knm 21/5: số thuê bao",
       "reason": ""
     },
     {
@@ -78079,10 +78592,10 @@ window.REPORT_GSJ_SALES_DATA = {
       "source": "Không rõ",
       "owner": "Lan Anh",
       "owner2": "",
-      "stageCode": "L2",
-      "stageGroup": "Qualified / tìm hiểu",
-      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
-      "note": "20/5: anh ở HCM , con học lớp 10 trường an dương vương HCM, chưa có định hướng ngành nghề, anh mới tìm hiểu sơ qua",
+      "stageCode": "L3",
+      "stageGroup": "Hẹn lịch / trải nghiệm",
+      "status": "L3.1 Từ chối tham gia",
+      "note": "20/5: anh ở HCM , con học lớp 10 trường an dương vương HCM, chưa có định hướng ngành nghề, anh mới tìm hiểu sơ qua 22/5: anh bảo con chưa sắp được ljch nên ko tham gia",
       "reason": ""
     },
     {
@@ -78099,6 +78612,566 @@ window.REPORT_GSJ_SALES_DATA = {
       "stageGroup": "Không kết nối / không quan tâm",
       "status": "L1. Contact đã phát sinh cuộc gọi đầu tiên",
       "note": "20/05: nghe nhưng không nói gì",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Huyen My",
+      "phone": "84834932918",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Quyên",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Con Tạ Trần Nam Khánh",
+      "phone": "0904122345",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "21/05: đã liên hệ gửi thông tin qua zalo, PH mong muốn tham gia đề tài để mang đề tài đi thi tại trường",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Vân Anh",
+      "phone": "0938388686",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/5: Con học lớp 10 Vinschool times city. Hướng ngành Business. đã gửi đề tài AI cho mẹ mẹ bảo sẽ tham khảo",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Trần Linh",
+      "phone": "0903077083",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L6",
+      "stageGroup": "Đã thanh toán",
+      "status": "L6 Thanh toán thành công",
+      "note": "21/05: đã liên hệ gửi chương trình lipid và CT thực tập về Y sinh, con lớp 9 học trần Đại nghĩa, dự định du học Úc hoặc Mỹ ngày y sinh nhưng chưa biết bắt đầu tư đâu",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Huong Vu thi lan",
+      "phone": "84915716719",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "21/5: Bạn năm nay chuẩn bị lên lớp 9, học trường yên Hòa, định thi chuyên. Bố mẹ định hướng cho các ngành về Bán dẫn. Định cho đi du học Trung quốc",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Lê Tiên Tiến",
+      "phone": "0344030668",
+      "product": "KHTH",
+      "source": "Không rõ",
+      "owner": "Ánh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/5: con lớp 6 trường Đống Đa, nhà ở gần bệnh viện bạch mai, thật ra c đang tìm cho con CT học hè, giơi thiện với mẹ CT trại hè QT, mẹ bảo thế thôi em ạ c tìm học mấy tháng hè xong thôi, thuyết phục mẹ tìmg hiểu KHTH, mẹ bảo oke em gửi thông tin CT cho chị",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Thu Giang",
+      "phone": "0384304960",
+      "product": "KHTH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/05: đã liên hệ qua zalo - imess",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "",
+      "monthLabel": "",
+      "contactName": "Vũ Hương",
+      "phone": "0915716719",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "C4",
+      "stageGroup": "Trùng số",
+      "status": "C4 Trùng số",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Hồ Ngọc Phúc Bảo",
+      "phone": "0889617717",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/05: hsinh lớp 8 hè này lên 9, học trường chuyên cấp 2 tại Vũng Tàu, quan tâm dự án KHTN",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Nguyen",
+      "phone": "0868583081",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Ánh",
+      "owner2": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "22/5: KNM",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Ngô Thu Thủy",
+      "phone": "0912346083",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2.1 Có nhu cầu nhưng chưa sẵn sàng hẹn lịch",
+      "note": "22/05: hsinh bên Đông Anh, quan tâm về kinh tế, năm nay lên lớp 12 mẹ có mục tiêu du học Nhật. Đã kết nối zalo gửi mẹ thông tin đề tài BA, mẹ báo sẽ trao đổi lại với con rồi chị sẽ nhắn lại em 23/05: đã remind mẹ, gửi thêm hình ảnh video lớp học BA nhưng mẹ chưa phản hồi - Mẹ đã phản hồi báo con con không thích, có gợi ý mẹ gửi thêm đề tài nhưng mẹ bảo con muốn tập trung học tiếng Nhật và SAT",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Linh",
+      "phone": "0986203926",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/5: cbi lớp 9 học nguyễn trường tộ, chuyên toán với hóa. muốn order chủ đề riêngcbi lớp 9 học nguyễn trường tộ, chuyên toán với hóa. muốn order chủ đề riêng",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Minh nguyệt",
+      "phone": "0938990999",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/05: gọi PH báo để lại thông tin nhắn qua zalo, đã nhắn nhưng chưa phản hồi",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "21/05/2026",
+      "monthLabel": "",
+      "contactName": "Nhân",
+      "phone": "0979202171",
+      "product": "FA",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "22/05: knm 23/05: knm",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "La Ho",
+      "phone": "0905232000",
+      "product": "ChatBanDan",
+      "source": "Không rõ",
+      "owner": "Ánh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2.2. Đúng đối tượng, nhưng bận, gọi lại sau",
+      "note": "22/5: gls",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Anh Thu",
+      "phone": "0943452009",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "22/5: ko ll được tối sẽ gọi lại. Gọi lại các ngày đều ko nghe máy",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Tên con là : Đỗ Hà Phương Linh",
+      "phone": "0947643999",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/05: hs lớp 9 năm nay thi tốt nghiệp nguyện vọng vào chuyên ng huệ, có dự định đi du học trung quốc, mẹ muốn tìm hiểu về các ngành kinh tế, xã hội, luật kinh tế để phù hợp định hướng app du học ngành luật của con. Đã gửi 2 đề tài nhưng mẹ chưa phản hồi",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Trần Thảo Nguyên",
+      "phone": "0903656785",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/5: ko ll được tối sẽ gọi lại 1 bạn lớp 10 lê hồng phong ngành kĩ thuật môi trường, hàng không 1 bạn lớp 8 trần đại nghĩa ngành Y Tp hcm",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Thị Minh Tâm",
+      "phone": "0909391867",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L2",
+      "stageGroup": "Qualified / tìm hiểu",
+      "status": "L2 Contact đúng nhu cầu, muốn tìm hiểu",
+      "note": "22/05: Phụ huynh trong TP HCM, con học lớp 8 năm nay lên 9, học tốt vật lý, mong muốn cho con trải nghiệm trước, có ý định du học nhưng sẽ tính sau, đã liên hệ gửi thông tin qua zalo nhưng chưa trả lời 23/05: remind lại mẹ, đã gửi đề tài bán dẫn, mẹ sợ con năm nay lớp 8 lên 9 còn sớm nhưng đã giải thích cho mẹ nhưng chưa thấy phản hồi lại",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "22/05/2026",
+      "monthLabel": "",
+      "contactName": "Trịnh Vương",
+      "phone": "0936770608",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "23/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen My Linh",
+      "phone": "090 4196998",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "24/05: gọi nhỡ hotline, chiều đã gọi lại nhưng không nghe máy",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Thoa",
+      "phone": "097 9546617",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "L1",
+      "stageGroup": "Không kết nối / không quan tâm",
+      "status": "L1.2 Không liên lạc được / máy bận",
+      "note": "24/05: gọi nhỡ hotline, chiều đã gọi lại nhưng không nghe máy",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "The kien",
+      "phone": "0916843638",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5: kll",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phương Anh",
+      "phone": "0986739993",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Do Xuan Dien",
+      "phone": "0985020848",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5: tháng 6 gọi lại cho anh giờ con bận thi đã",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyen Ha",
+      "phone": "0352468771",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Dang Kim Hoang",
+      "phone": "0935210982",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5 kll",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phan Phương",
+      "phone": "0398306568",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Nguyễn Hiếu Gia Huy",
+      "phone": "0903680344",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Phạm Nhung",
+      "phone": "0938505968",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Huynh Uyen",
+      "phone": "0859975555",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5 ko nghe mây",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Hoang Hang",
+      "phone": "0919259877",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "bạn Hảo Linh",
+      "phone": "0986113115",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5 c báo tối gọi lại",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "24/05/2026",
+      "monthLabel": "",
+      "contactName": "Hoang Anh minh Ngọc",
+      "phone": "0906106588",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Hiền",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2026",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "C Linh",
+      "phone": "0911511990",
+      "product": "Không rõ",
+      "source": "Không rõ",
+      "owner": "Lan Anh",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "25/5: cô giáo T.A ở quảng ninh có 2hs lên lớp 11. 1 bạn định hướng CNTT lquan tới CN. 1 bạn định hướng MKT. Đã gửi đề tài AI cho cô tham khảo",
       "reason": ""
     }
   ]
