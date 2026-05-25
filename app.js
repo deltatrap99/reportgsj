@@ -12,6 +12,8 @@ const state = {
     year: "all",
     month: "all",
     week: "all",
+    dateFrom: "",
+    dateTo: "",
     owner: "all",
     stage: "all",
     status: "all",
@@ -86,6 +88,12 @@ const translations = {
     salesFilterYear: "Năm",
     salesFilterMonth: "Tháng",
     salesFilterWeek: "Tuần",
+    salesFilterDateFrom: "Từ ngày",
+    salesFilterDateTo: "Đến ngày",
+    salesDatePresetLabel: "Preset ngày",
+    salesPreset7Days: "7 ngày gần nhất",
+    salesPreset30Days: "30 ngày gần nhất",
+    salesPresetThisMonth: "Tháng này",
     salesFilterOwner: "Sale",
     salesFilterStage: "Funnel",
     salesFilterStatus: "Tình trạng",
@@ -202,6 +210,12 @@ const translations = {
     salesFilterYear: "Year",
     salesFilterMonth: "Month",
     salesFilterWeek: "Week",
+    salesFilterDateFrom: "From date",
+    salesFilterDateTo: "To date",
+    salesDatePresetLabel: "Date presets",
+    salesPreset7Days: "Last 7 days",
+    salesPreset30Days: "Last 30 days",
+    salesPresetThisMonth: "This month",
     salesFilterOwner: "Owner",
     salesFilterStage: "Funnel",
     salesFilterStatus: "Status",
@@ -896,6 +910,8 @@ function renderSalesFilterOptions(report) {
   const yearSelect = document.getElementById("sales-year-filter");
   const monthSelect = document.getElementById("sales-month-filter");
   const weekSelect = document.getElementById("sales-week-filter");
+  const dateFromInput = document.getElementById("sales-date-from-filter");
+  const dateToInput = document.getElementById("sales-date-to-filter");
   const ownerSelect = document.getElementById("sales-owner-filter");
   const stageSelect = document.getElementById("sales-stage-filter");
   const statusSelect = document.getElementById("sales-status-filter");
@@ -925,31 +941,22 @@ function renderSalesFilterOptions(report) {
     ),
   ].join("");
 
-  const weekOptions = [
-    ...new Set(
-      report.records
-        .filter((record) => {
-          if (state.salesFilters.year !== "all" && record.year !== state.salesFilters.year) {
-            return false;
-          }
-          if (state.salesFilters.month !== "all" && record.monthLabel !== state.salesFilters.month) {
-            return false;
-          }
-          return true;
-        })
-        .map((record) => {
-          const day = Number((record.date || "").split("/")[0]);
-          if (!day) {
-            return "";
-          }
-          if (day <= 7) return `${t("weekLabel")} 1`;
-          if (day <= 14) return `${t("weekLabel")} 2`;
-          if (day <= 21) return `${t("weekLabel")} 3`;
-          return `${t("weekLabel")} 4`;
-        })
-        .filter(Boolean)
-    ),
-  ];
+  const weekOptions =
+    state.salesFilters.month !== "all"
+      ? [1, 2, 3, 4].map((index) => `${t("weekLabel")} ${index}`)
+      : [
+          ...new Set(
+            report.records
+              .filter((record) => {
+                if (state.salesFilters.year !== "all" && record.year !== state.salesFilters.year) {
+                  return false;
+                }
+                return true;
+              })
+              .map((record) => getSalesWeekLabel(record.date))
+              .filter(Boolean)
+          ),
+        ];
 
   weekSelect.innerHTML = [
     `<option value="all">${t("salesAllWeeks")}</option>`,
@@ -957,6 +964,9 @@ function renderSalesFilterOptions(report) {
       (value) => `<option value="${value}" ${state.salesFilters.week === value ? "selected" : ""}>${value}</option>`
     ),
   ].join("");
+
+  dateFromInput.value = state.salesFilters.dateFrom;
+  dateToInput.value = state.salesFilters.dateTo;
 
   ownerSelect.innerHTML = [
     `<option value="all">${t("salesAllOwners")}</option>`,
@@ -996,6 +1006,8 @@ function renderSalesFilterOptions(report) {
 
 function filterSalesRecords(records) {
   return records.filter((record) => {
+    const recordDateValue = parseSalesDateValue(record.date);
+
     if (state.salesFilters.year !== "all" && record.year !== state.salesFilters.year) {
       return false;
     }
@@ -1003,12 +1015,16 @@ function filterSalesRecords(records) {
       return false;
     }
     if (state.salesFilters.week !== "all") {
-      const day = Number((record.date || "").split("/")[0]);
-      const weekLabel =
-        day <= 7 ? `${t("weekLabel")} 1` : day <= 14 ? `${t("weekLabel")} 2` : day <= 21 ? `${t("weekLabel")} 3` : `${t("weekLabel")} 4`;
+      const weekLabel = getSalesWeekLabel(record.date);
       if (weekLabel !== state.salesFilters.week) {
         return false;
       }
+    }
+    if (state.salesFilters.dateFrom && recordDateValue && recordDateValue < state.salesFilters.dateFrom) {
+      return false;
+    }
+    if (state.salesFilters.dateTo && recordDateValue && recordDateValue > state.salesFilters.dateTo) {
+      return false;
     }
     if (state.salesFilters.owner !== "all" && record.owner !== state.salesFilters.owner) {
       return false;
@@ -1057,6 +1073,74 @@ function summarizeSalesRecords(records) {
   }
 
   return summary;
+}
+
+function getSalesWeekLabel(dateValue) {
+  const day = Number(String(dateValue || "").split("/")[0]);
+  if (!day) {
+    return "";
+  }
+
+  if (day <= 7) {
+    return `${t("weekLabel")} 1`;
+  }
+  if (day <= 14) {
+    return `${t("weekLabel")} 2`;
+  }
+  if (day <= 21) {
+    return `${t("weekLabel")} 3`;
+  }
+  return `${t("weekLabel")} 4`;
+}
+
+function parseSalesDateValue(dateValue) {
+  const parts = String(dateValue || "").split("/");
+  if (parts.length !== 3) {
+    return "";
+  }
+
+  const [day, month, year] = parts;
+  if (!day || !month || !year) {
+    return "";
+  }
+
+  return `${year.padStart(4, "0")}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+}
+
+function getSalesRecordTimestamp(record) {
+  const normalizedDate = parseSalesDateValue(record.date);
+  if (normalizedDate) {
+    return Date.parse(`${normalizedDate}T00:00:00`);
+  }
+
+  return Number(record.year) || 0;
+}
+
+function formatDateInputValue(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function applySalesDatePreset(preset) {
+  const now = new Date();
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  let start = new Date(end);
+
+  if (preset === "7d") {
+    start.setDate(end.getDate() - 6);
+  } else if (preset === "30d") {
+    start.setDate(end.getDate() - 29);
+  } else if (preset === "month") {
+    start = new Date(end.getFullYear(), end.getMonth(), 1);
+  } else {
+    return;
+  }
+
+  state.salesFilters.dateFrom = formatDateInputValue(start);
+  state.salesFilters.dateTo = formatDateInputValue(end);
+  updateSalesDashboard();
 }
 
 const salesProductBuckets = [
@@ -1553,12 +1637,22 @@ function renderSalesLevelChart(records) {
 
 function renderSalesDetailTable(records) {
   const table = document.getElementById("sales-detail-table");
+  const meta = document.getElementById("sales-detail-meta");
   if (!records.length) {
     table.innerHTML = `<tr><td colspan="7">${t("salesNoData")}</td></tr>`;
+    meta.textContent = state.language === "vi" ? "Không có contact nào trong bộ lọc hiện tại." : "No contacts match the current filters.";
     return;
   }
 
-  const rows = [...records].slice(0, 40);
+  const maxRows = 200;
+  const rows = [...records]
+    .sort((left, right) => getSalesRecordTimestamp(right) - getSalesRecordTimestamp(left))
+    .slice(0, maxRows);
+  meta.textContent =
+    state.language === "vi"
+      ? `Hiển thị ${number.format(rows.length)} / ${number.format(records.length)} contact mới nhất theo bộ lọc.`
+      : `Showing the latest ${number.format(rows.length)} of ${number.format(records.length)} matching contacts.`;
+
   table.innerHTML = rows
     .map(
       (record) => `
@@ -1655,10 +1749,18 @@ function init() {
     exportSalesFunnelDetail();
   });
 
+  document.querySelectorAll("[data-sales-preset]").forEach((button) => {
+    button.addEventListener("click", () => {
+      applySalesDatePreset(button.dataset.salesPreset);
+    });
+  });
+
   const salesFilterIds = [
     ["sales-year-filter", "year"],
     ["sales-month-filter", "month"],
     ["sales-week-filter", "week"],
+    ["sales-date-from-filter", "dateFrom"],
+    ["sales-date-to-filter", "dateTo"],
     ["sales-owner-filter", "owner"],
     ["sales-stage-filter", "stage"],
     ["sales-status-filter", "status"],

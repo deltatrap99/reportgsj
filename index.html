@@ -225,6 +225,22 @@
               <select id="sales-week-filter" class="month-filter"></select>
             </div>
             <div class="toolbar-group">
+              <label class="filter-label" for="sales-date-from-filter" data-i18n="salesFilterDateFrom">Từ ngày</label>
+              <input id="sales-date-from-filter" class="month-filter" type="date" />
+            </div>
+            <div class="toolbar-group">
+              <label class="filter-label" for="sales-date-to-filter" data-i18n="salesFilterDateTo">Đến ngày</label>
+              <input id="sales-date-to-filter" class="month-filter" type="date" />
+            </div>
+            <div class="toolbar-group sales-preset-group">
+              <span class="filter-label" data-i18n="salesDatePresetLabel">Preset ngày</span>
+              <div class="sales-preset-list">
+                <button class="preset-button" type="button" data-sales-preset="7d" data-i18n="salesPreset7Days">7 ngày gần nhất</button>
+                <button class="preset-button" type="button" data-sales-preset="30d" data-i18n="salesPreset30Days">30 ngày gần nhất</button>
+                <button class="preset-button" type="button" data-sales-preset="month" data-i18n="salesPresetThisMonth">Tháng này</button>
+              </div>
+            </div>
+            <div class="toolbar-group">
               <label class="filter-label" for="sales-owner-filter" data-i18n="salesFilterOwner">Sale</label>
               <select id="sales-owner-filter" class="month-filter"></select>
             </div>
@@ -341,6 +357,7 @@
               <div>
                 <p class="eyebrow" data-i18n="salesTableLabel">Lead Details</p>
                 <h3 data-i18n="salesTableTitle">Bảng contact chi tiết</h3>
+                <p id="sales-detail-meta" class="sales-detail-meta"></p>
               </div>
             </div>
             <div class="table-wrap">

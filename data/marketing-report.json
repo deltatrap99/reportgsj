@@ -2,7 +2,7 @@
   "source": {
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/edit?gid=1858053609#gid=1858053609",
     "exportUrl": "https://docs.google.com/spreadsheets/d/1W3Dx9OqsDtgtpcPuuFAANu6U6N9EdrTGGatqFr584GQ/export?format=csv&gid=1858053609",
-    "syncedAt": "10:32:42 25/5/2026",
+    "syncedAt": "13:22:44 25/5/2026",
     "sourceType": "google-sheet-csv"
   },
   "meta": {
@@ -45,16 +45,16 @@
     },
     {
       "label": "C3",
-      "value": 201,
+      "value": 207,
       "type": "number",
-      "change": 4.145077720207254,
+      "change": 7.253886010362693,
       "changeType": "percent"
     },
     {
       "label": "L0",
-      "value": 184,
+      "value": 191,
       "type": "number",
-      "change": 5.142857142857142,
+      "change": 9.142857142857142,
       "changeType": "percent"
     },
     {
@@ -124,11 +124,11 @@
       "revenue": 342000000,
       "expense": 27660202,
       "efficiency": 8.1,
-      "c3": 201,
-      "l0": 184,
+      "c3": 207,
+      "l0": 191,
       "l5": 14,
-      "c3Cost": 137613,
-      "l0Cost": 150327,
+      "c3Cost": 133624,
+      "l0Cost": 144818,
       "arpu": 24428571
     }
   ],
@@ -1253,8 +1253,8 @@
         "date": "25/05",
         "revenue": 0,
         "expense": 0,
-        "c3": 1,
-        "l0": 0,
+        "c3": 7,
+        "l0": 7,
         "l5": 0
       }
     ]
@@ -1262,11 +1262,11 @@
   "currentFunnel": [
     {
       "label": "C3",
-      "value": 201
+      "value": 207
     },
     {
       "label": "L0",
-      "value": 184
+      "value": 191
     },
     {
       "label": "L5",
@@ -1278,8 +1278,8 @@
       "date": "25/05",
       "revenue": 0,
       "expense": 0,
-      "c3": 1,
-      "l0": 0,
+      "c3": 7,
+      "l0": 7,
       "l5": 0
     },
     {
@@ -1334,8 +1334,8 @@
   "insights": [
     "Thang 05 ghi nhan RE 342.000.000 ₫ va ME/RE 8.1%.",
     "Doanh thu thay doi giam 39.7% so voi ky truoc.",
-    "Ty le chuyen doi L0/C3 hien tai dat 91.5%.",
-    "Gia C3 dang o muc 137.613 ₫ va ARPU dat 24.428.571 ₫."
+    "Ty le chuyen doi L0/C3 hien tai dat 92.3%.",
+    "Gia C3 dang o muc 133.624 ₫ va ARPU dat 24.428.571 ₫."
   ],
   "actions": [
     "Duy tri muc chi phi hien tai va uu tien ngan sach cho nhom co doanh thu on dinh.",

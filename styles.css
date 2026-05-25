@@ -316,6 +316,33 @@ body::before {
   min-width: 0;
 }
 
+.sales-preset-group {
+  align-items: stretch;
+}
+
+.sales-preset-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preset-button {
+  border: 1px solid rgba(22, 48, 41, 0.1);
+  border-radius: 999px;
+  min-height: 40px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.preset-button:hover {
+  background: #ffffff;
+}
+
 .panel-nested {
   padding: 22px;
   background: rgba(255, 255, 255, 0.5);
@@ -329,6 +356,12 @@ body::before {
 .sales-detail-hint {
   max-width: 860px;
   line-height: 1.55;
+}
+
+.sales-detail-meta {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
 .kpi-card {
@@ -944,6 +977,11 @@ tbody tr:hover {
   .toolbar-cluster,
   .sales-filter-grid {
     gap: 10px;
+  }
+
+  .sales-preset-list {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .toolbar-group {

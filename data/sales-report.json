@@ -2,7 +2,7 @@
   "source": {
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1s_j6nUGTpi3bCQJtyCf7llbtYvRL3W2_cPuenErY-Vg/edit?usp=sharing",
     "exportUrl": "https://docs.google.com/spreadsheets/d/1s_j6nUGTpi3bCQJtyCf7llbtYvRL3W2_cPuenErY-Vg/export?format=xlsx",
-    "syncedAt": "10:35:51 25/05/2026",
+    "syncedAt": "13:26:39 25/05/2026",
     "sourceType": "google-sheet-xlsx"
   },
   "meta": {
@@ -10,7 +10,7 @@
     "subtitle": "Theo dõi funnel, tình trạng contact, sale owner và insight từ dữ liệu CRM / telesales."
   },
   "summary": {
-    "totalContacts": 4917,
+    "totalContacts": 4923,
     "qualified": 684,
     "scheduled": 183,
     "nurtured": 1485,
@@ -25,7 +25,7 @@
     },
     {
       "label": "Không rõ",
-      "value": 1173
+      "value": 1179
     },
     {
       "label": "Không kết nối / không quan tâm",
@@ -195,7 +195,7 @@
   "productCounts": [
     {
       "label": "NCKH",
-      "value": 2292
+      "value": 2298
     },
     {
       "label": "KHTN",
@@ -203,7 +203,7 @@
     },
     {
       "label": "ABS",
-      "value": 329
+      "value": 330
     },
     {
       "label": "KHTH",
@@ -343,7 +343,7 @@
   "yearCounts": [
     {
       "label": "2025",
-      "value": 3813
+      "value": 3819
     },
     {
       "label": "2026",
@@ -61500,7 +61500,103 @@
       "monthLabel": "",
       "contactName": "C Linh",
       "phone": "Lớp 10",
-      "product": "Không rõ",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Chị Phố",
+      "phone": "",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Đoàn Thị Vân Du",
+      "phone": "Lớp 12",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Vũ Linh",
+      "phone": "Lớp 11",
+      "product": "ABS",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Đoàn Thị Vân Du",
+      "phone": "Lớp 12",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Lê Mai Thanh",
+      "phone": "Lớp 9",
+      "product": "NCKH",
+      "source": "Không rõ",
+      "owner": "Chưa gán",
+      "owner2": "",
+      "stageCode": "UNK",
+      "stageGroup": "Không rõ",
+      "status": "Không rõ",
+      "note": "",
+      "reason": ""
+    },
+    {
+      "year": "2025",
+      "date": "25/05/2026",
+      "monthLabel": "",
+      "contactName": "Oanh Thai",
+      "phone": "",
+      "product": "NCKH",
       "source": "Không rõ",
       "owner": "Chưa gán",
       "owner2": "",
